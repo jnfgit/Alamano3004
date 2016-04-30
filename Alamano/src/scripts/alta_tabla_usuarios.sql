@@ -1,0 +1,22 @@
+//BUEN MATERIAL:
+//https://cursoprogramador.wordpress.com/2014/01/16/tabla-para-almacenar-usuario-y-contrasena-de-aplicacion/
+
+CREATE TABLE USUARIO(
+	CREATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de Creación de la fila',
+	UPDATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de modificación',
+	UPDATE_USER VARCHAR(200) NOT NULL DEFAULT '' COMMENT 'Usuario que registro el cambio',
+	UPDATE_PROGRAM VARCHAR(200) NOT NULL DEFAULT '' COMMENT 'El programa, clase que realizo el insert',
+	ID_USUARIO INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador del usuario',
+	NOMBRE VARCHAR(150) NOT NULL DEFAULT '' COMMENT 'Nombre del Usuario',
+	APELLIDO VARCHAR(150) NOT NULL DEFAULT '' COMMENT 'Apellido del Usuario',
+	TELEFONO INT(9) COMMENT 'Telefono Del Usuario',
+	EMAIL VARCHAR(150) NOT NULL UNIQUE DEFAULT '' COMMENT 'Correo electrónico del Usuario',
+	FECHA_NACIMIENTO DATE COMMENT 'Fecha de Nacimiento del Usuario',
+	CLAVE_PASS VARCHAR(40) NOT NULL COMMENT 'Clave de Seguridad',
+	PRIMARY KEY (ID_USUARIO)
+	);
+	
+ALTER TABLE USUARIO ADD INDEX (EMAIL);
+
+//Otra Opcioón
+//ALTER TABLE USUARIO ADD UNIQUE (EMAIL

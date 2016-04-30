@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db_properties>
+	<db.admin.ConnectionManagement>
+		<database_username>dbuser</database_username>
+		<database_userpassword>dbuser2013</database_userpassword>
+	</db.admin.ConnectionManagement>
+</db_properties>

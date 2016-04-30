@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<!-- TRANSLATES -->
+	<application>
+		<resource-bundle>
+			<base-name>com.translates.translate</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+	</application>
+	<!-- MANAGED BEANS -->
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.beans.LoginBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioBean</managed-bean-name>
+		<managed-bean-class>com.beans.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- NAVIGATION RULE TO inicio.xhtml -->
+	<navigation-rule>
+		<from-view-id>/inicio.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>goLogin</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>goRegistro</from-outcome>
+			<to-view-id>/registro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>goServicios</from-outcome>
+			<to-view-id>/servicios.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- NAVIGATION RULE TO login.xhtml -->
+	<navigation-rule>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>forgorPassword</from-outcome>
+			<to-view-id>/resetPassword.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ok</from-outcome>
+			<to-view-id>/inicio.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/error.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

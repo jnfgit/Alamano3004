@@ -14,12 +14,12 @@
 	<managed-bean>
 		<managed-bean-name>loginBean</managed-bean-name>
 		<managed-bean-class>com.beans.LoginBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>
 		<managed-bean-class>com.beans.UsuarioBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
 	<navigation-rule>
@@ -41,6 +41,10 @@
 	<navigation-rule>
 		<from-view-id>/login.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>forgorPassword</from-outcome>
 			<to-view-id>/resetPassword.xhtml</to-view-id>
 		</navigation-case>
@@ -51,6 +55,18 @@
 		<navigation-case>
 			<from-outcome>error</from-outcome>
 			<to-view-id>/error.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- NAVIGATION RULE TO home.xhtml -->
+	<navigation-rule>
+		<from-view-id>/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>servicios</from-outcome>
+			<to-view-id>/servicios.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

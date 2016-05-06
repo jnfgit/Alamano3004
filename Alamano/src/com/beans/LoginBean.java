@@ -1,14 +1,22 @@
 package com.beans;
 
-public class LoginBean {
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
+import db.admin.Admin;
+
+public class LoginBean extends Admin{
 
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-		
+	
+	private String userName;
+	
 	public String login(){
-		System.out.print(emailAddress + " " + password + " " + rememberMe);
-		emailAddress = "";
+		setUserName("Nombre Apellido");
 		return "";
 		
 	}

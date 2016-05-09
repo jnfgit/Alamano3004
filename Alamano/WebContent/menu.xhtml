@@ -1,0 +1,70 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:b="http://bootsfaces.net/ui">
+    
+     <nav class="navbar navbar-fixed-top" id="menu">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3" id="logo_cont">
+                  <a href="index.html" class="pull-left">
+                    <img id="logo" class="img-responsive" src="img/logo.png" alt="A la Mano"></img>
+                    <img id="logo_2" class="img-responsive" src="img/logo_2.png" alt="A la Mano"></img>
+                  </a>
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-top" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="pull-right col-lg-8 collapse navbar-collapse" id="menu-top">
+                  <ul class="nav nav-pills">
+                    <li class="active"><a href="/Alamano/inicio.jsf">INICIO</a></li>
+                    <li><a href="\servicio_ampliado_1.html">COMO FUNCIONA</a></li>
+                    <li><a href="\servicio_ampliado_2.html">SERVICIOS</a></li>
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">AYUDA <span class="vinieta icon-vinieta-01"></span></a>
+                      <ul class="dropdown-menu padding-sm">
+                        <li class="padding-xs"><a href="#">Action</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="padding-xs"><a href="#">Another action</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="padding-xs"><a href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                    <!-- 
+                    <li><a href="#" class="btn btn-primary-invert btn-xs text-bold">INGRESAR</span></a></li> 
+                    --> 
+					
+					<c:if test="#{loginBean.emailAddress == null}">
+                    	<li>
+                    	<!-- 
+                    	<h:commandButton action="login" class="btn btn-primary-invert btn-xs text-bold text-uppercase" style="background-color: transparent;" value="#{msgs.home_ingresar}"></h:commandButton>
+                    	--> 
+                    	<button type="button" class="btn btn-primary-invert btn-xs text-bold text-uppercase" style="background-color: transparent;" data-toggle="modal" data-target="#myModal">#{msgs.home_ingresar}</button>
+                    	<!-- Modal -->
+	
+                    	</li>
+                    </c:if>
+                    <c:if test="#{loginBean.emailAddress != null}">      
+                    <li class="dropdown"><a href="#" class="text-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="user icon-user"></span> <h:outputText value="#{loginBean.emailAddress}"></h:outputText> <span class="vinieta icon-icon-vinieta-01"></span></a>
+                      <ul class="dropdown-menu padding-sm">
+                        <li class="padding-xs"><a href="/servicios.html">Servicios</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="padding-xs"><a href="/ordenes.html">Mi cuenta</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="padding-xs"><a href="#">Salir</a></li>
+                      </ul>
+                    </li>
+                    </c:if>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+</ui:composition>

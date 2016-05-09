@@ -1,0 +1,65 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+   
+   <header class="padding-lg container-fluid with-navbar" data-parallax="scroll" data-image-src="img/cabezal/portada_01.jpg">
+      <div class="container">
+        <div class="row">
+        	<ui:include src="/menu.xhtml" />
+          <div class="text-center">
+            <h1 class="col-lg-offset-1 text-white spa-bot-lg"><strong>Servicios para el hogar</strong></h1>
+            <div class="slider col-lg-offset-1 col-lg-11 col-lg-offset-1">
+              <div class="item">
+                <a href="/" class="no-underline"><span class="icon-aire icon-exlg line-height-lg text-white"></span></a>
+                <p class="spa-top-xs text-white text-sm">Instalación y service de aire acondicionado</p>
+              </div>
+              <div class="item">
+                <a href="/" class="no-underline"><span class="icon-muebles icon-exlg line-height-lg text-white"></span></a>
+                <p class="spa-top-xs text-white text-sm">Armado de muebles</p>
+              </div>
+              <div class="item">
+                <a href="/" class="no-underline"><span class="icon-limpieza icon-exlg line-height-lg text-white"></span></a>
+                <p class="spa-top-xs text-white text-sm">Limpieza</p>
+              </div>
+              <div class="item">
+                <a href="/" class="no-underline"><span class="icon-lavanderia icon-exlg line-height-lg text-white"></span></a>
+                <p class="spa-top-xs text-white text-sm">Lavandería</p>
+              </div>
+              <div class="item">
+                <a href="/" class="no-underline"><span class="icon-aire icon-exlg line-height-lg text-white"></span></a>
+                <p class="spa-top-xs text-white text-sm">Instalación y service de aire acondicionado</p>
+              </div>
+            </div>
+            <a href="/servicios.html" class="col-lg-offset-1 btn btn-secondary btn-sm spa-bot-md text-bold text-uppercase" role="btn">Ver todos los servicios</a>            
+          </div>
+      
+          </div>
+          </div>
+    </header>
+	     						  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    
+    	<ui:include src="/loginWC.xhtml" />
+    	<!-- Modal content-->
+      
+    	<!--
+    	 <div class="modal-dialog">
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">close</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        	<ui:include src="/loginWC.xhtml" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+       </div>
+       -->
+  </div>
+</ui:composition>

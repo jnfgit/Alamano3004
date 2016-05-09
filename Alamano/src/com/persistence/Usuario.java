@@ -112,4 +112,8 @@ public class Usuario implements Serializable{
 	public void setClave_pass(String clave_pass) {
 		this.clave_pass = clave_pass;
 	}
+	
+	public String getNombreCompleto(){
+		return this.getNombre() + " " + this.getApellido();
+	}
 }

@@ -36,9 +36,12 @@
                       <input type="radio" id="hombre" value="hombre" name="sexo" class="iconos-sexo">HOMBRE <span class="hidden-xs icon-hombre text-md text-primary valign-top"></span></input>
                     </label>
                   </div>
+                  
                   <div class="form-group form-group-lg">
-                    <label for="correo" class="text-semibold">Email</label>
-                    <input type="email" class="form-control" id="correo"></input>
+                     <label for="correo" class="text-semibold"><h:outputText value="#{msgs.login_emailText}"></h:outputText></label>
+					<!-- <input type="email" class="form-control" id="correo" placeholder="Correo"></input> -->
+					<b:inputText value="#{registroBean.emailAddress}" type="email" class="form-control" id="correo" placeholder="#{msgs.login_IngresarEmail}" ></b:inputText>
+                    <!-- required="true" requiredMessage="Ingrese su Email." <b:message for="correo"></b:message> -->                    
                   </div>
                   <div class="form-group form-group-lg spa-bot-lg">
                     <label for="contrasenia" class="text-semibold">Contraseña</label>

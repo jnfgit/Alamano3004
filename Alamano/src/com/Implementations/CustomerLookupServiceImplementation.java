@@ -1,4 +1,4 @@
-package com.types;
+package com.Implementations;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,12 +10,14 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import com.persistence.Usuario;
-import com.results.Customer;
+import com.types.ICustomerLookupService;
 
-public class CustomerLookupServiceImplementation implements CustomerLookupService {
+import db.admin.DataBaseHelper;
+
+public class CustomerLookupServiceImplementation implements ICustomerLookupService {
 
 	@Override
-	public Customer findCustomer(String userName, String password) {
+	public Usuario findCustomer(String userName, String password) {
 		
 		EntityManagerFactory emf = 	Persistence.createEntityManagerFactory("prueba", new HashMap());
 		EntityManager em = emf.createEntityManager();
@@ -23,26 +25,22 @@ public class CustomerLookupServiceImplementation implements CustomerLookupServic
 				
 		Usuario usuario = null;
 	
-		Query queryCinco = em.createQuery("SELECT u FROM Usuario u Where u.email = :email and u.clave_pass= :clave");
+		Query queryCinco = em.createQuery("SELECT u FROM Usuario u Where u.email = :email and u.clave_pass = :clave_pass");
 		queryCinco.setParameter("email", userName);
-		queryCinco.setParameter("clave_pass", password);
+		
+		DataBaseHelper hel = new DataBaseHelper();
+		String pass = hel.getSHA1FromPassword(password);
+		queryCinco.setParameter("clave_pass", pass);
 		
 		List usuarios = (ArrayList)queryCinco.getResultList();
 		
-		if(usuarios != null){
-			if(usuarios.size() > 0){
-				usuario = (Usuario)usuarios.get(0);
-			}
+		if(usuarios != null && usuarios.size() > 0){
+			usuario = (Usuario)usuarios.get(0);
 		}
 				
 		em.close();
 		emf.close();
 		
-		if(usuario == null){
-			return null;
-		}else{
-			Customer customer = new Customer();
-			return customer;
-		}
+		return usuario;
 	}
 }

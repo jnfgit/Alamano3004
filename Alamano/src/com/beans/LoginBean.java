@@ -1,24 +1,38 @@
 package com.beans;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
+
+import java.io.Serializable;
+
+import com.Implementations.CustomerLookupServiceImplementation;
+import com.persistence.Usuario;
 
 import db.admin.Admin;
 
-public class LoginBean extends Admin{
+public class LoginBean extends Admin implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-	
-	private String userName;
-	
-	public String login(){
-		setUserName("Nombre Apellido");
-		return "";
 		
+	public String login(){
+		
+		CustomerLookupServiceImplementation lookService = new CustomerLookupServiceImplementation();
+		Usuario usuario = lookService.findCustomer(emailAddress, password);
+		
+		if(usuario != null){
+			setUserName(usuario.getNombreCompleto());
+			return "home";
+		}else{
+			return "error";
+		}
+	}
+	
+	public String logout(){
+		System.out.println("ESTO ES UN AFANO");
+		getSession().invalidate();
+		return "";
 	}
 			
 	public String getEmailAddress() {

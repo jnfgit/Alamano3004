@@ -15,7 +15,7 @@ public class LoginBean extends Admin implements Serializable{
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-		
+
 	public String login(){
 		
 		CustomerLookupServiceImplementation lookService = new CustomerLookupServiceImplementation();
@@ -29,7 +29,7 @@ public class LoginBean extends Admin implements Serializable{
 		}
 	}
 	
-	public String logout(){
+	public String logout2(){
 		getSession().invalidate();
 		return "";
 	}

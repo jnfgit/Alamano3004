@@ -51,7 +51,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>home</from-outcome>
-			<to-view-id>/home.xhtml</to-view-id>
+			<to-view-id>/inicio.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>error</from-outcome>
@@ -60,7 +60,7 @@
 	</navigation-rule>
 	<!-- NAVIGATION RULE TO home.xhtml -->
 	<navigation-rule>
-		<from-view-id>/home.xhtml</from-view-id>
+		<from-view-id>/inicio.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>servicios</from-outcome>
 			<to-view-id>/servicios.xhtml</to-view-id>

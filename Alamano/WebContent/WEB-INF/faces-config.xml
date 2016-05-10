@@ -10,6 +10,7 @@
 			<var>msgs</var>
 		</resource-bundle>
 	</application>
+	
 	<!-- MANAGED BEANS -->
 	<managed-bean>
 		<managed-bean-name>loginBean</managed-bean-name>

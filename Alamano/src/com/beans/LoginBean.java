@@ -30,7 +30,6 @@ public class LoginBean extends Admin implements Serializable{
 	}
 	
 	public String logout(){
-		System.out.println("ESTO ES UN AFANO");
 		getSession().invalidate();
 		return "";
 	}

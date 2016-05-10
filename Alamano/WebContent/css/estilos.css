@@ -336,9 +336,6 @@ fieldset[disabled] .btn-secondary.focus {
   -webkit-transition: all .15s linear;
   -o-transition: all .15s linear;
   transition: all .15s linear;
-  /*jfernandez ini*/
-  background-color: transparent;
-  /*jfernandez fin*/
 }
 /*BOTON INVERTIVO v2.0*/
 .btn-primary-invert:hover {
@@ -787,13 +784,6 @@ fieldset[disabled] .btn-secondary.focus {
   border-color: transparent !important;
 }
 
-/*jfernandez ini*/
-.bg-box:hover input.btn {
-  background-color: #f58018;
-  border-color: transparent !important;
-  color:white;
-}
-/*jfernandez fin*/
 
 /*RESUMEN PEDIDO*/
 .bg-resumen-content {

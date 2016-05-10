@@ -1,0 +1,64 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+   
+   <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well">
+            <h4 class="text-black text-uppercase text-center spa-bot-lg"><strong>Crea tu usuario</strong></h4>
+            <form>
+              <div class="row spa-bot-lg">
+                <div class="col-lg-offset-2 col-lg-8">
+                  <div class="row">
+                    <div class="form-group form-group-lg col-lg-6">
+                      <label for="nombre" class="text-semibold">Nombre</label>
+                      <input type="text" class="form-control" id="nombre"></input>
+                    </div>
+                    <div class="form-group form-group-lg col-lg-6">
+                      <label for="apellido" class="text-semibold">Apellido</label>
+                      <input type="text" class="form-control" id="apellido"></input>
+                    </div>
+                  </div>
+                  <div class="form-group form-group-lg">
+                    <label for="fechanac" class="text-semibold">Fecha de Nacimiento</label>
+                    <input type="text" class="form-control" id="fechanac"></input>
+                  </div>
+                  <div class="form-group form-group-lg">
+                    <label for="telefono" class="text-semibold">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono"></input>
+                  </div>
+                  <div class="spa-bot clearfix">
+                    <p>Sexo</p>
+                    <label class="radio-inline col-lg-3 col-xs-5">
+                      <input type="radio" id="mujer" value="mujer" name="sexo" class="iconos-sexo">MUJER <span class="hidden-xs icon-mujer text-md text-secondary valign-top"></span></input>
+                    </label>
+                    <label class="radio-inline col-lg-3 col-xs-5 col-lg-offset-6">
+                      <input type="radio" id="hombre" value="hombre" name="sexo" class="iconos-sexo">HOMBRE <span class="hidden-xs icon-hombre text-md text-primary valign-top"></span></input>
+                    </label>
+                  </div>
+                  
+                  <div class="form-group form-group-lg">
+                     <label for="correo" class="text-semibold"><h:outputText value="#{msgs.login_emailText}"></h:outputText></label>
+					<!-- <input type="email" class="form-control" id="correo" placeholder="Correo"></input> -->
+					<b:inputText value="#{registroBean.emailAddress}" type="email" class="form-control" id="correo" placeholder="#{msgs.login_IngresarEmail}" ></b:inputText>
+                    <!-- required="true" requiredMessage="Ingrese su Email." <b:message for="correo"></b:message> -->                    
+                  </div>
+                  <div class="form-group form-group-lg spa-bot-lg">
+                    <label for="contrasenia" class="text-semibold">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasenia"></input>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="">
+                      Acepto los <a href="/" class="text-bold">Términos &amp; Condiciones</a> de uso de alamano
+                      </input>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-secondary btn-block">CREAR CUENTA</button>
+                </div>
+              </div>
+            </form>
+            <h5 class="text-center double-line spa-bot-md"><strong><span>¿Yá tenés cuenta en alamano.com.uy?</span></strong></h5>
+            <div class="text-center text-sm"><a href="/login.html">Ingresá Aquí</a></div>
+          </div>
+</ui:composition>

@@ -1,119 +1,145 @@
 package com.persistence;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-/*
-@NamedQueries({
-	@NamedQuery (name = "validateUserByEmailAndPassword", query = "SELECT NOMBRE, APELLIDO, EMAIL FROM Usuario u WHERE (u.email = :email) AND u.clave_pass = SHA1(:clave)"),
-	@NamedQuery (name = "getSHA1FromPass", query = "SELECT SHA1(:clave)")
-})
-*/
-
+/**
+ * The persistent class for the usuario database table.
+ * 
+ */
 @Entity
-public class Usuario implements Serializable{
-	
+@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	@Column(nullable=false)
-	private Date create_date;
-	@Column(nullable=false)
-	private Date update_date;
-	@Column(nullable=false)
-	private String update_user;
-	@Column(nullable=false)
-	private String update_program;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_Usuario;
-	@Column(nullable=false)
-	private String nombre;
-	@Column(nullable=false)
+	@Column(name="ID_USUARIO")
+	private int idUsuario;
+
 	private String apellido;
-	@Column
-	private long telefono;
-	@Column(nullable=false)
+
+	@Column(name="CLAVE_PASS")
+	private String clavePass;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="CREATE_DATE")
+	private Date createDate;
+
 	private String email;
-	@Column
-	private Date fecha_nacimiento;
-	@Column(nullable=false)
-	private String clave_pass;
-	
-	public Date getCreate_date() {
-		return create_date;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="FECHA_NACIMIENTO")
+	private Date fechaNacimiento;
+
+	private String nombre;
+
+	private int telefono;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="UPDATE_DATE")
+	private Date updateDate;
+
+	@Column(name="UPDATE_PROGRAM")
+	private String updateProgram;
+
+	@Column(name="UPDATE_USER")
+	private String updateUser;
+
+	public Usuario() {
 	}
-	public void setCreate_date(Date create_date) {
-		this.create_date = create_date;
+
+	public int getIdUsuario() {
+		return this.idUsuario;
 	}
-	public Date getUpdate_date() {
-		return update_date;
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
-	public void setUpdate_date(Date update_date) {
-		this.update_date = update_date;
-	}
-	public String getUpdate_user() {
-		return update_user;
-	}
-	public void setUpdate_user(String update_user) {
-		this.update_user = update_user;
-	}
-	public String getUpdate_program() {
-		return update_program;
-	}
-	public void setUpdate_program(String update_program) {
-		this.update_program = update_program;
-	}
-	public long getId_Usuario() {
-		return id_Usuario;
-	}
-	public void setId_Usuario(long id_Usuario) {
-		this.id_Usuario = id_Usuario;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+
 	public String getApellido() {
-		return apellido;
+		return this.apellido;
 	}
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public long getTelefono() {
-		return telefono;
+
+	public String getClavePass() {
+		return this.clavePass;
 	}
-	public void setTelefono(long telefono) {
-		this.telefono = telefono;
+
+	public void setClavePass(String clavePass) {
+		this.clavePass = clavePass;
 	}
+
+	public Date getCreateDate() {
+		return this.createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
+
+	public Date getFechaNacimiento() {
+		return this.fechaNacimiento;
 	}
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
-	public String getClave_pass() {
-		return clave_pass;
+
+	public String getNombre() {
+		return this.nombre;
 	}
-	public void setClave_pass(String clave_pass) {
-		this.clave_pass = clave_pass;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getTelefono() {
+		return this.telefono;
+	}
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+
+	public Date getUpdateDate() {
+		return this.updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public String getUpdateProgram() {
+		return this.updateProgram;
+	}
+
+	public void setUpdateProgram(String updateProgram) {
+		this.updateProgram = updateProgram;
+	}
+
+	public String getUpdateUser() {
+		return this.updateUser;
+	}
+
+	public void setUpdateUser(String updateUser) {
+		this.updateUser = updateUser;
 	}
 	
 	public String getNombreCompleto(){
-		return this.getNombre() + " " + this.getApellido();
+		return this.getNombre()+ " " +this.getApellido(); 
 	}
+
 }

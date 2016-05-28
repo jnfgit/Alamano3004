@@ -336,6 +336,9 @@ fieldset[disabled] .btn-secondary.focus {
   -webkit-transition: all .15s linear;
   -o-transition: all .15s linear;
   transition: all .15s linear;
+  /*jfernandez ini*/
+  background-color: transparent;
+  /*jfernandez fin*/
 }
 /*BOTON INVERTIVO v2.0*/
 .btn-primary-invert:hover {
@@ -748,6 +751,11 @@ fieldset[disabled] .btn-secondary.focus {
 .bg-box a {
   color: #fff;
 }
+/*jfernandez ini*/
+.bg-box input {
+  color: #fff;
+}
+/*jfernandez fin*/
 .bg-box p {
   font-size: 18px;
 }
@@ -784,6 +792,12 @@ fieldset[disabled] .btn-secondary.focus {
   border-color: transparent !important;
 }
 
+/*jfernandez ini*/
+.bg-box:hover input.btn {
+  background-color: #f58018;
+  border-color: transparent !important;
+}
+/*jfernandez fin*/
 
 /*RESUMEN PEDIDO*/
 .bg-resumen-content {

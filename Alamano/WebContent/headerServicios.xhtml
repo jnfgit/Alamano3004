@@ -1,0 +1,26 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+	<div class="padding-lg container-fluid with-navbar" data-parallax="scroll" data-image-src="img/cabezal/portada_02.jpg">
+      <div class="container">
+        <div class="row">
+          <ui:include src="menu.xhtml" />
+          <div class="text-center">
+            <h1 class="text-white spa-bot-md spa-top-lg"><strong>Servicios para el hogar</strong></h1>
+            <p class="text-white text-bold text-sm spa-bot-md">Ahora alamano se encargará de enviarte un profesional que resuelva tu servicio</p>
+            <h:commandButton class="btn btn-secondary btn-sm spa-bot-lg text-bold text-uppercase" value="#{msgs.servicios_seleccionaElServicioQueBuscas}" action="servicios"></h:commandButton>
+            <div><img class="spa-bot-lg" src="img/vinieta_00.png" alt=""></img></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <ui:include src="/serv.xhtml" /> -->
+  <div class="modal fade" id="myModal" role="dialog">
+    	<ui:include src="/loginWC.xhtml" />
+  </div>
+
+</ui:composition>

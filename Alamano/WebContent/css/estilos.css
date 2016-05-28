@@ -4,6 +4,7 @@
 body {
   font-family: 'Work Sans', sans-serif;
   color: #313337;
+  outline: none !important;
 }
 p {line-height: normal;}
 

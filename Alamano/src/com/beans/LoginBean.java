@@ -18,9 +18,11 @@ public class LoginBean extends Admin implements Serializable{
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-	
 	private boolean abrir = false;
-	
+	private int errorCode;
+	private String errorDescription;
+
+
 	public String login(){
 		
 		CustomerLookupServiceImplementation lookService = new CustomerLookupServiceImplementation();
@@ -28,8 +30,10 @@ public class LoginBean extends Admin implements Serializable{
 		
 		if(usuario != null){
 			setUserName(usuario.getNombreCompleto());
+			setEmailAddress(usuario.getEmail());
 			return "home";
 		}else{
+			setUserName(null);
 			setEmailAddress(null);
 			setPassword(null);
 			abrir = true;
@@ -76,11 +80,21 @@ public class LoginBean extends Admin implements Serializable{
 		this.abrir = abrir;
 	}
 	
-	
 	public void error() {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Contact admin."));
     }
 	
-	
-
+	public int getErrorCode() {
+		return errorCode;
+	}
+	public void setErrorCode(int errorCode) {
+		this.errorCode = errorCode;
+	}
+	public String getErrorDescription() {
+		return errorDescription;
+	}
+	public void setErrorDescription(String errorDescription) {
+		this.errorDescription = errorDescription;
+	}
 }
+

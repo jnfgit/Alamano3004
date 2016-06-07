@@ -4,12 +4,17 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 	<persistence-unit name="prueba">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.persistence.Servicio</class>
+		<class>com.persistence.Usuario</class>
+		<class>com.persistence.Proveedor</class>
+		<class>com.persistence.Trabajo</class>
+		<class>com.persistence.Pago</class>
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/alamano" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.connection.username" value="root" />
-			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.connection.password" value="" />
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="false" />
 		</properties>

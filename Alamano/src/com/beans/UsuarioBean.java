@@ -14,7 +14,7 @@ public class UsuarioBean {
 	
 	private String nombre;
 	private String apellido;
-	private Long telefono;
+	private int telefono;
 	private String email;
 	private Date dateOfBirth;
 	private String password;
@@ -27,20 +27,20 @@ public class UsuarioBean {
 		em.getTransaction().begin();
 		Usuario u = new Usuario();
 		
-		u.setCreate_date(new Date(System.currentTimeMillis()));
-		u.setUpdate_date(new Date(System.currentTimeMillis()));
-		u.setUpdate_program("Manual");
-		u.setUpdate_user("jfernandez");
+		u.setCreateDate(new Date(System.currentTimeMillis()));
+		u.setUpdateDate(new Date(System.currentTimeMillis()));
+		u.setUpdateProgram("Manual");
+		u.setUpdateUser("jfernandez");
 		
 		u.setNombre(this.nombre);
 		u.setApellido(this.apellido);
 		u.setEmail(this.email);
 		u.setTelefono(this.telefono);
-		u.setFecha_nacimiento(this.dateOfBirth);
+		u.setFechaNacimiento(this.dateOfBirth);
 		
 		DataBaseHelper hel = new DataBaseHelper();
 		String pass = hel.getSHA1FromPassword(this.password);
-		u.setClave_pass(pass);
+		u.setClavePass(pass);
 
 		em.persist(u);
 		em.getTransaction().commit();
@@ -69,10 +69,10 @@ public class UsuarioBean {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	public Long getTelefono() {
+	public int getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(Long telefono) {
+	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
 	public String getEmail() {

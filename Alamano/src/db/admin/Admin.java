@@ -18,4 +18,8 @@ public abstract class Admin {
                 .getExternalContext().getSession(false);
         return session.getAttribute("username").toString();
     }
+    
+    public FacesContext getFacesContext(){
+    	return FacesContext.getCurrentInstance();
+    }
 }

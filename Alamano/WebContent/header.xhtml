@@ -40,6 +40,14 @@
 	     						  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     
+    <SCRIPT type="text/javascript">
+    $(document).ready(function() {
+    	  if("#{loginBean.abrir}" == "true") {
+    	    $('#myModal').modal('show');
+    	  }
+    	});
+    </SCRIPT>
+        
     	<ui:include src="/loginWC.xhtml" />
     	<!-- Modal content-->
       

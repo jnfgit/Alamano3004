@@ -3,6 +3,9 @@ package com.beans;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 import com.Implementations.CustomerLookupServiceImplementation;
 import com.persistence.Usuario;
 
@@ -15,7 +18,9 @@ public class LoginBean extends Admin implements Serializable{
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-
+	
+	private boolean abrir = false;
+	
 	public String login(){
 		
 		CustomerLookupServiceImplementation lookService = new CustomerLookupServiceImplementation();
@@ -25,6 +30,10 @@ public class LoginBean extends Admin implements Serializable{
 			setUserName(usuario.getNombreCompleto());
 			return "home";
 		}else{
+			setEmailAddress(null);
+			setPassword(null);
+			abrir = true;
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Contact admin."));
 			return "error";
 		}
 	}
@@ -52,4 +61,26 @@ public class LoginBean extends Admin implements Serializable{
 	public void setRememberMe(boolean rememberMe) {
 		this.rememberMe = rememberMe;
 	}
+
+	public boolean isAbrir() {
+		if(abrir){
+			boolean abrirAux = true;
+			abrir = false;
+			return abrirAux;
+		}
+		
+		return abrir;
+	}
+
+	public void setAbrir(boolean abrir) {
+		this.abrir = abrir;
+	}
+	
+	
+	public void error() {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Contact admin."));
+    }
+	
+	
+
 }

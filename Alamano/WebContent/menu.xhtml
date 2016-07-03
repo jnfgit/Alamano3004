@@ -23,18 +23,10 @@
                 </div>
                 <div class="pull-right col-lg-8 collapse navbar-collapse" id="menu-top">
                   <ul class="nav nav-pills">
-                    <li class="active"><a href="inicio.jsf">INICIO</a></li>
-                    <li><a href="\servicio_ampliado_1.html">COMO FUNCIONA</a></li>
-                    <li><a href="\servicio_ampliado_2.html">SERVICIOS</a></li>
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">AYUDA <span class="vinieta icon-vinieta-01"></span></a>
-                      <ul class="dropdown-menu padding-sm">
-                        <li class="padding-xs"><a href="#">Action</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="padding-xs"><a href="#">Another action</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="padding-xs"><a href="#">Something else here</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="inicio.jsf">INICIO</a></li>
+                    <li><a href="\Alamano\inicio.jsf#cuerpo">COMO FUNCIONA</a></li>
+                    <li><a href="\Alamano\servicios.jsf">SERVICIOS</a></li>
+                    <li><a href="\Alamano\ayuda.jsf">AYUDA</a></li>
 					<c:if test="#{loginBean.emailAddress == null}">
                     	<li>
                     	<h:commandButton styleClass="btn btn-primary-invert btn-xs text-bold text-uppercase" value="#{msgs.home_ingresar}" action="login"></h:commandButton>

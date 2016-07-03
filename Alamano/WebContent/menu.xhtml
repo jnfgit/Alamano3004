@@ -35,19 +35,10 @@
                         <li class="padding-xs"><a href="#">Something else here</a></li>
                       </ul>
                     </li>
-                                        
-                    <!-- 
-                    <li><a href="#" class="btn btn-primary-invert btn-xs text-bold">INGRESAR</span></a></li> 
-                    --> 
-					
 					<c:if test="#{loginBean.emailAddress == null}">
                     	<li>
-                    	<!-- 
-                    	<h:commandButton action="login" class="btn btn-primary-invert btn-xs text-bold text-uppercase" style="background-color: transparent;" value="#{msgs.home_ingresar}"></h:commandButton>
-                    	--> 
-                    	<button type="button" class="btn btn-primary-invert btn-xs text-bold text-uppercase" style="background-color: transparent;" data-toggle="modal" data-target="#myModal">#{msgs.home_ingresar}</button>
+                    	<h:commandButton styleClass="btn btn-primary-invert btn-xs text-bold text-uppercase" value="#{msgs.home_ingresar}" action="login"></h:commandButton>
                     	<!-- Modal -->
-             
                     	</li>
                     </c:if>
                     <c:if test="#{loginBean.emailAddress != null}">      
@@ -63,19 +54,9 @@
                       </ul>
                     </li>
                     </c:if>
-
                   </ul>
                 </div>
               </div>
             </div>
           </nav>
-          
-          
-
-
-
- 
-
-          
-
 </ui:composition>

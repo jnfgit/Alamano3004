@@ -1,6 +1,7 @@
 package com.beans;
 
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.faces.application.FacesMessage;
@@ -18,13 +19,10 @@ public class LoginBean extends Admin implements Serializable{
 	private String emailAddress;
 	private String password;
 	private boolean rememberMe;
-	private boolean abrir = false;
 	private int errorCode;
 	private String errorDescription;
-
-
-	public String login(){
-		
+	
+	public String login(){		
 		CustomerLookupServiceImplementation lookService = new CustomerLookupServiceImplementation();
 		Usuario usuario = lookService.findCustomer(emailAddress, password);
 		
@@ -36,18 +34,28 @@ public class LoginBean extends Admin implements Serializable{
 			setUserName(null);
 			setEmailAddress(null);
 			setPassword(null);
-			abrir = true;
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Contact admin."));
+			error();
 			return "error";
 		}
 	}
 	
 	public String logout2(){
-		getSession().invalidate();
+		this.emailAddress = null;
+		invalidateSession();
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath() + "/inicio.jsf");
+		} catch (IOException e) {
+			e.printStackTrace();			
+		}
 		return "";
 	}
 			
 	public String getEmailAddress() {
+ 		if (emailAddress == null)
+			return null;
+ 		if( emailAddress.compareTo("") == 0)
+ 			return null;
+ 		
 		return emailAddress;
 	}
 	public void setEmailAddress(String emailAddress) {
@@ -66,35 +74,8 @@ public class LoginBean extends Admin implements Serializable{
 		this.rememberMe = rememberMe;
 	}
 
-	public boolean isAbrir() {
-		if(abrir){
-			boolean abrirAux = true;
-			abrir = false;
-			return abrirAux;
-		}
-		
-		return abrir;
-	}
-
-	public void setAbrir(boolean abrir) {
-		this.abrir = abrir;
-	}
-	
 	public void error() {
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Contact admin."));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario/Contraseña incorrectos, intente nuevamente.", "Detalle, el error ocurre al intentar validar un usuario/contraseña."));
     }
-	
-	public int getErrorCode() {
-		return errorCode;
-	}
-	public void setErrorCode(int errorCode) {
-		this.errorCode = errorCode;
-	}
-	public String getErrorDescription() {
-		return errorDescription;
-	}
-	public void setErrorDescription(String errorDescription) {
-		this.errorDescription = errorDescription;
-	}
 }
 

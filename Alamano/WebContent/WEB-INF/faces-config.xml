@@ -22,6 +22,7 @@
 		<managed-bean-class>com.beans.UsuarioBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
 	<navigation-rule>
 		<from-view-id>/inicio.xhtml</from-view-id>
@@ -59,18 +60,6 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>error</from-outcome>
-			<to-view-id>/servicios.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<!-- NAVIGATION RULE TO home.xhtml -->
-	<navigation-rule>
-		<from-view-id>/inicio.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>servicios</from-outcome>
-			<to-view-id>/servicios.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>login</from-outcome>
 			<to-view-id>/login.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>

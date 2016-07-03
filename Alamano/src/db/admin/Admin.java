@@ -9,6 +9,10 @@ public abstract class Admin {
 		return (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 	}
 	
+	public void invalidateSession(){
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+	}
+	
 	public void setUserName(String _userName){
 		getSession().setAttribute("username", _userName);
 	}

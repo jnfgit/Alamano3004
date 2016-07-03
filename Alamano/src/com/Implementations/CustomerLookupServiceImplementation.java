@@ -25,7 +25,7 @@ public class CustomerLookupServiceImplementation implements ICustomerLookupServi
 				
 		Usuario usuario = null;
 	
-		Query queryCinco = em.createQuery("SELECT u FROM Usuario u Where u.email = :email and u.clave_pass = :clave_pass");
+		Query queryCinco = em.createQuery("SELECT u FROM Usuario u Where u.email = :email and u.clavePass = :clave_pass");
 		queryCinco.setParameter("email", userName);
 		
 		DataBaseHelper hel = new DataBaseHelper();

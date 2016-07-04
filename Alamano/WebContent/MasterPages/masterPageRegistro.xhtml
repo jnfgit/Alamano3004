@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -12,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="theme-color" content="#1c2c71"></meta>
-    <title>Contenido - A La Mano</title>
+    <title>Login - A La Mano</title>
     
     <!-- FUENTES -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700' rel='stylesheet' type='text/css'></link>
@@ -53,34 +51,25 @@
 
     <!-- LOADER -->
     <script src="js/pace.min.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/dataurl.css"></link>
+    <link rel="stylesheet" href="css/dataurl.css" ></link>
 
     <!-- DATEPIKER -->
     <link rel="stylesheet" href="css/pikaday.css"></link>
-    <link rel="stylesheet" href="css/pikaday-theme.css"></link>
+    <!-- <link rel="stylesheet" href="css/pikaday-theme.css"> -->
     <script src="js/moment.js"></script>
     <script src="js/pikaday.js"></script>
-
 
     <!-- ********************* -->
     <!-- LLAMADOS DE FUNCIONES -->
     <!-- ********************* -->
-    <script type="text/javascript">
-	    $(function(){
-	        // TOOLTIPS
-	        $('[data-toggle="tooltip"]').tooltip();
-	
-	        // FIJAR MENU
-	        $(window).scroll(function () {
-	          $('#menu').toggleClass("solid", ($(window).scrollTop() > 100));
-	        });
-	      });
-    </script>
+    <script src="ownjs/registro.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <h:body>	
 	<h:form>
-		<ui:include src="/headerAyuda.xhtml" />	
-		<ui:insert name="content">Default content</ui:insert>
+		<header class="padding-lg container-fluid with-navbar" data-parallax="scroll" data-image-src="img/cabezal/portada_01.jpg">
+			<ui:include src="/headerRegistro.xhtml" />	
+			<ui:insert name="content">Default content</ui:insert>
+  		</header>
   		<ui:include src="/footer.xhtml" />
   	</h:form>
 </h:body>

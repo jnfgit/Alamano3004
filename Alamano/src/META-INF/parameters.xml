@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parameters>
+	<correo>alamanouy@gmail.com</correo>
+	<password>alamano2016</password>
+	<recuperarPasswordSubject>Alamano! - Servicio de Recuperación de Contraseña</recuperarPasswordSubject>
+	<recuperarPasswordBody>
+		<![CDATA[
+		Usted ha solicitado cambiar su contraseña, <br> para cambiarla click #link#
+		]]>
+	</recuperarPasswordBody>		
+	<confirmarUsuarioSubject>Alamano! - Confirmación de Usuario</confirmarUsuarioSubject>
+	<confirmarUsuarioBody>
+		<![CDATA[
+		Bienvenido a Alamano!, <br> para terminar de activar su cuenta haga click #link#
+		]]>
+	</confirmarUsuarioBody>
+	<urlRecoverPassword>http://localhost:8080/Alamano/cambiocontrasena.jsp</urlRecoverPassword>
+	<urlConfirmarUsuario>http://localhost:8080/Alamano/ConfirmarMail</urlConfirmarUsuario>	
+	<pedidoRegistradoSubject>Alamano! - Pedido Registrado</pedidoRegistradoSubject>
+	<pedidoRegistradoBody>
+		<![CDATA[
+		Estimado #clienteNombre#,<br>su pedido en #alamano# ha sido registrado.<br>#detalleOrden#<br><br>Muchas Gracias por preferirnos - Alamano!
+		]]>
+	</pedidoRegistradoBody>
+</parameters>

@@ -6,7 +6,8 @@
     xmlns:b="http://bootsfaces.net/ui"
     xmlns:rich="http://richfaces.org/rich"
     xmlns:a4j="http://richfaces.org/a4j"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
         
     <ui:define name="title">
         A la Mano - Mis Datos
@@ -71,7 +72,7 @@
                 <div class="form-group spa-bot-lg">
                   <label for="fechanac" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_fechaNacText}"></h:outputText></label>
                   <div class="col-sm-8">
-                    <b:inputText required="true" requiredMessage="Ingrese Fecha de Nacimiento" value="#{perfilBean.fechanac}" type="text" class="form-control input-lg" id="fechanac"></b:inputText>
+                    <b:inputText required="true" requiredMessage="Ingrese Fecha de Nacimiento" value="#{perfilBean.fechanac}" type="text" class="form-control input-lg" id="fechanac" a:placeholder="dd/mm/aaaa"></b:inputText>
                     <h:message for="fechanac" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
                     
                   </div>
@@ -123,7 +124,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="password2" class="col-sm-4 control-label text-semibold text-muted"><h:outputText value="#{msgs.perfil_ConfContraText}"></h:outputText></label>
+                  <label for="password2" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_ConfContraText}"></h:outputText></label>
                   <div class="col-sm-8">
                   <b:inputText required="true" requiredMessage="Confirmar contraseña" value="#{perfilBean.password2}" type="password" class="form-control input-lg" id="password2"></b:inputText>
                   <h:message for="password2" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>

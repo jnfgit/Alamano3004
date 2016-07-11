@@ -9,10 +9,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.eclipse.jdt.internal.compiler.lookup.ConstraintExceptionFormula;
+//import org.eclipse.jdt.internal.compiler.lookup.ConstraintExceptionFormula;
 import org.hibernate.exception.ConstraintViolationException;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.persistence.Usuario;
 
 import db.admin.DataBaseHelper;

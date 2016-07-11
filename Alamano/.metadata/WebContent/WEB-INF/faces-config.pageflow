@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14620531406420" configfile="/Alamano/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="inicio.xhtml" x="122" y="498" id="pf14620531616531" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14620531616532 pf14620531616543 pf14620531616544 pf14629209582800 pf14629209582801 pf14644609171212" inlinks="pf14629209582802 pf14644609171212" path="/inicio.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="338" y="178" id="pf14620531616549" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf146205316165410 pf14624951991920 pf14629209582802 pf14675770681580" inlinks="pf14620531616532 pf14624951991920 pf14629209582801 pf14675770681580" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="338" y="562" id="pf146205316165412" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14620531616543" path="/registro.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="servicios.xhtml" x="338" y="946" id="pf146205316165413" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14620531616544 pf14629209582800" path="/servicios.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="resetPassword.xhtml" x="554" y="178" id="pf146205316165414" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf146205316165410" path="/resetPassword.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="inicio.xhtml" x="338" y="370" id="pf14620531616531" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" outlinks="pf14620531616532 pf14620531616543 pf14620531616544 pf14644609171212" inlinks="pf14629209582802 pf14644609171212" path="/inicio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="370" id="pf14620531616549" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" outlinks="pf146205316165410 pf14624951991920 pf14629209582802 pf14675770681580" inlinks="pf14620531616532 pf14624951991920 pf14675770681580" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="554" y="178" id="pf146205316165412" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14620531616543" path="/registro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="servicios.xhtml" x="554" y="562" id="pf146205316165413" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14620531616544" path="/servicios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resetPassword.xhtml" x="338" y="754" id="pf146205316165414" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf146205316165410" path="/resetPassword.xhtml"/>
   <links id="pf14620531616532" target="pf14620531616549" source="pf14620531616531" outcome="goLogin"/>
   <links id="pf14620531616543" target="pf146205316165412" source="pf14620531616531" outcome="goRegistro"/>
   <links id="pf14620531616544" target="pf146205316165413" source="pf14620531616531" outcome="goServicios"/>
   <links id="pf146205316165410" target="pf146205316165414" source="pf14620531616549" outcome="forgorPassword"/>
   <links id="pf14629209582802" target="pf14620531616531" source="pf14620531616549" outcome="home"/>
-  <links id="pf14629209582800" target="pf146205316165413" source="pf14620531616531" outcome="servicios"/>
-  <links id="pf14629209582801" target="pf14620531616549" source="pf14620531616531" outcome="login"/>
   <links id="pf14624951991920" target="pf14620531616549" source="pf14620531616549" outcome="login">
     <bendPoints d1Height="-36" d2Height="-36"/>
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>

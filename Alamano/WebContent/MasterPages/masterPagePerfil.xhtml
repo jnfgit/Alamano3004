@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="theme-color" content="#1c2c71"></meta>
-    <title>Contenido - A La Mano</title>
+    <title>Mis datos - A La Mano</title>
     
     <!-- FUENTES -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700' rel='stylesheet' type='text/css'></link>
@@ -45,19 +45,19 @@
 
     <!-- SLIDER CARROUSEL -->
     <script type="text/javascript" src="js/slick.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/slick.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 
     <!-- EFECTO PARALLAX -->
     <script src="js/parallax.min.js"></script>    
 
     <!-- LOADER -->
     <script src="js/pace.min.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/dataurl.css"></link>
+    <link rel="stylesheet" href="css/dataurl.css" />
 
     <!-- DATEPIKER -->
     <link rel="stylesheet" href="css/pikaday.css"></link>
-    <link rel="stylesheet" href="css/pikaday-theme.css"></link>
+    <!-- <link rel="stylesheet" href="css/pikaday-theme.css"> -->
     <script src="js/moment.js"></script>
     <script src="js/pikaday.js"></script>
 
@@ -65,13 +65,15 @@
     <!-- ********************* -->
     <!-- LLAMADOS DE FUNCIONES -->
     <!-- ********************* -->
-	<script src="ownjs/tooltip.js" type="text/javascript" charset="utf-8"></script>
-    <script src="ownjs/fijarMenu.js" type="text/javascript" charset="utf-8"></script>
-    
+    <script src="ownjs/tooltip.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ownjs/fijarMenu.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="ownjs/fijarBoton.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ownjs/sliders.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ownjs/fechaPicker.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <h:body>	
 	<h:form>
-		<ui:include src="/Headers/headerAyuda.xhtml" />	
+		<ui:include src="/Headers/headerPerfil.xhtml" />	
 		<ui:insert name="content">Default content</ui:insert>
   		<ui:include src="/Footers/footer.xhtml" />
   	</h:form>

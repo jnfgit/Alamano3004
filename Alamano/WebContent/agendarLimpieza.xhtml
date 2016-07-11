@@ -1,0 +1,226 @@
+<ui:composition template="/MasterPages/masterPageLimpieza.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:p="http://primefaces.org/ui">
+        
+    <ui:define name="title">
+        A la Mano - Agendar
+    </ui:define>
+    
+    <ui:define name="content">
+    <div class="spa-bot-md padding-lg" id="cuerpo">
+      <div class="container">
+        <div class="row">
+          <h4><strong>Detalles del servicio</strong></h4>
+          <p>Alamano cuenta con profesionales con experiencia que proporcionan un servicio de limpieza para el hogar de alta calidad. Cada profesional ha sido supervisado por Alamano para garantizar un servicio de calidad, rapidez y buen precio.</p>
+          <p class="spa-bot">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur </p>
+          <dl class="dl-horizontal list-check">
+            <dt><span class="icon-check-01 text-primary"></span></dt>
+            <dd class="spa-bot">Et quasi architecto beatae vitae dicta sunt explicabo. <br></br>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</dd>
+            <dt><span class="icon-check-01 text-primary"></span></dt>
+            <dd>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <p class="text-center text-sm text-bold">Contratar este Servicio</p>
+      <hr></hr>
+      <div class="container">
+        <div class="row pasos-servicio">
+          <div class="text-center col-lg-2 col-xs-2 col-lg-offset-0"><a href="/servicio_ampliado_1.html"><span class="icon-detalles"></span> <p>1. Detalles</p></a></div>
+          <div class="col-lg-3 col-xs-3"><hr></hr></div>
+          <div class="text-center col-lg-2 col-xs-2"><a href="/servicio_ampliado_2.html"><span class="icon-agendar active"></span> <p>2. Agendar</p></a></div>
+          <div class="col-lg-3 col-xs-3"><hr></hr></div>
+          <div class="text-center col-lg-2 col-xs-2"><a href="/servicio_ampliado_3.html"><span class="icon-pago"></span> <p>3. Pago</p></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gris spa-bot padding-top-lg padding-bot-lg container-fluid" id="pasos">
+      <form action="">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-lg-12">
+              <div class="bg-white well">
+                <h4 class="text-uppercase"><strong>2. AGENDAR</strong></h4>
+                <h5 class="text-center spa-bot double-line"><strong><span>Dirección</span></strong></h5>
+                <div class="row spa-bot">
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-lg row">
+                      <label class="col-sm-3 control-label spa-top-sm text-normal" for="direccion">Dirección:</label>
+                      <div class="col-sm-9 text-md text-bold">
+                        <input class="form-control" type="text" value="" id="direccion"></input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-lg row">
+                      <label class="col-sm-3 control-label spa-top-sm text-normal" for="apto">Apto:</label>
+                      <div class="col-sm-9 text-md text-bold">
+                        <input class="form-control" type="text" value="" id="apto"></input>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h5 class="text-center spa-bot double-line"><strong><span>Corrobore Datos de Registro</span></strong></h5>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-lg row">
+                      <label class="col-sm-3 control-label spa-top-sm text-normal" for="correo">Correo:</label>
+                      <div class="col-sm-9 text-md text-bold">
+                        <input class="form-control" type="email" value="" id="correo"></input>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <h5 class="text-center spa-bot double-line"><strong><span>Fecha y Hora</span></strong></h5>
+                <div class="flow-element spa-bot">
+                  <input type="hidden" id="datepicker"></input>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group form-group-lg row">
+                      <label class="col-sm-3 control-label spa-top-sm text-normal" for="horario">Horario:</label>
+                      <div class="col-sm-9 text-md text-bold">
+                        <select class="form-control" type="email" value="" id="horario">
+                          <option value="">15:30</option>
+                          <option value="">16:30</option>
+                          <option value="">17:30</option>
+                          <option value="">18:30</option>
+                          <option value="">19:30</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row spa-bot" id="btn-confirmar">
+                <div class="col-lg-12">
+                  <span class="icon-flecha text-secondary"></span> <a href="\servicio_ampliado_1.html" class="text-secondary">Volver a Detalles</a>
+                  <a href="\servicio_ampliado_3.html" class="btn btn-secondary btn-sm padding-lg pull-right">CONFIRMAR</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-sm-12 col-lg-12">
+              <div class="bg-white well">
+                <h4 class="text-primary text-uppercase"><strong>Resumen</strong></h4>
+                <hr></hr>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left media-middle">
+                    <div class="media-object text-bold">Servicio:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading"><span class="icon-limpieza text-sm text-info spa-der-xs"></span>Limpieza</div>
+                  </div>
+                </div>
+                <hr></hr>
+                <div class="relative">
+                  <a href="/servicio_ampliado_1.html"><span class="icon-editar text-info text-sm position position-top-right"></span></a>
+                  <div class="media spa-top-xs media-fix">
+                    <div class="media-left">
+                      <div class="media-object text-bold">Cuartos:</div>
+                    </div>
+                    <div class="media-body">
+                      <div class="media-heading">3</div>
+                    </div>
+                  </div>
+                  <div class="media spa-top-xs media-fix">
+                    <div class="media-left">
+                      <div class="media-object text-bold">Baños:</div>
+                    </div>
+                    <div class="media-body">
+                      <div class="media-heading">1</div>
+                    </div>
+                  </div>
+                  <div class="media spa-top-xs media-fix">
+                    <div class="media-left">
+                      <div class="media-object text-bold">Extras:</div>
+                    </div>
+                    <div class="media-body">
+                      <div class="media-heading">Ventanas<br></br>Horno<br></br>Heladera</div>
+                    </div>
+                  </div>
+                  <div class="media spa-top-xs media-fix">
+                    <div class="media-left">
+                      <div class="media-object text-bold">Tiempo Estimado:</div>
+                    </div>
+                    <div class="media-body">
+                      <div class="media-heading">3 Horas</div>
+                    </div>
+                  </div>
+                </div>
+                <hr></hr>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Precio:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading pull-right text-bold text-md text-secondary">$ 500,00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 spa-bot-xs">
+                  <h4 class="text-bold text-center text-sm">Preguntas Frecuentes</h4>
+                  <hr class="hr-var-1"></hr>
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">What’s included in a cleaning service?</a>
+                  <div class="collapse" id="collapseExample1">
+                    <div class="well bg-white spa-top-xs">
+                      From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 spa-bot-xs">
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">How does your pricing work?</a>
+                  <div class="collapse" id="collapseExample2">
+                    <div class="well bg-white spa-top-xs">
+                      From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 spa-bot-xs">
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">Can I change or cancel my booking?</a>
+                  <div class="collapse" id="collapseExample3">
+                    <div class="well bg-white spa-top-xs">
+                      From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 spa-bot-xs">
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">What is your cancellation and rescheduling policy?</a>
+                  <div class="collapse" id="collapseExample4">
+                    <div class="well bg-white spa-top-xs">
+                      From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 spa-bot-xs">
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">Why am I not able to book the time and date I want?</a>
+                  <div class="collapse" id="collapseExample5">
+                    <div class="well bg-white spa-top-xs">
+                      From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 spa-bot-xs">
+                  <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" href="#">I need more help.</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    </ui:define>
+
+</ui:composition>

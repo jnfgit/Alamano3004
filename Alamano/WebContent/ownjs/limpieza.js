@@ -1,6 +1,9 @@
       $(function(){
         // TOOLTIPS
         $('[data-toggle="tooltip"]').tooltip();
+        
+        // POPOVER
+        $('[data-toggle="popover"]').popover();
 
         // MOVER A PASOS
         ScrollTo("#pasos", 180);

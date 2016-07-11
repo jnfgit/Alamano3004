@@ -22,6 +22,11 @@
 		<managed-bean-class>com.beans.UsuarioBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>cleanBean</managed-bean-name>
+		<managed-bean-class>com.beans.CleanBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
 	<navigation-rule>

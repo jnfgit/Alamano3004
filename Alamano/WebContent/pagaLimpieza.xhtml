@@ -1,0 +1,284 @@
+<ui:composition template="/MasterPages/masterPageLimpieza.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:p="http://primefaces.org/ui">
+        
+    <ui:define name="title">
+        A la Mano - Agendar
+    </ui:define>
+    
+    <ui:define name="content">
+    <div class="spa-bot-md padding-lg" id="cuerpo">
+      <div class="container">
+        <div class="row">
+          <h4><strong>Detalles del servicio</strong></h4>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p class="spa-bot">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur </p>
+          <dl class="dl-horizontal list-check">
+            <dt><span class="icon-check-01 text-primary"></span></dt>
+            <dd class="spa-bot">Et quasi architecto beatae vitae dicta sunt explicabo. <br></br>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</dd>
+            <dt><span class="icon-check-01 text-primary"></span></dt>
+            <dd>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <p class="text-center text-sm text-bold">Contratar este Servicio</p>
+      <hr></hr>
+      <div class="container">
+        <div class="row pasos-servicio">
+          <div class="text-center col-lg-2 col-xs-2 col-lg-offset-0"><a href="/servicio_ampliado_1.html"><span class="icon-detalles"></span> <p>1. Detalles</p></a></div>
+          <div class="col-lg-3 col-xs-3"><hr></hr></div>
+          <div class="text-center col-lg-2 col-xs-2"><a href="/servicio_ampliado_2.html"><span class="icon-agendar"></span> <p>2. Agendar</p></a></div>
+          <div class="col-lg-3 col-xs-3"><hr></hr></div>
+          <div class="text-center col-lg-2 col-xs-2"><a href="/servicio_ampliado_3.html"><span class="icon-pago active"></span> <p>3. Pago</p></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gris spa-bot padding-top-lg padding-bot-lg container-fluid" id="pasos">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-7 col-sm-12 col-lg-12">
+            <div class="bg-white well">
+              <h4 class="text-uppercase"><strong>3. Pago</strong></h4>
+              <h5 class="text-center double-line"><strong><span>Método de Pago</span></strong></h5>
+              <div class="checkbox clearfix">
+                <label class="spa-der-sm"><input type="checkbox"></input> Master Card</label>
+                <span class="icon-info text-sm text-info" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" title="Master Card" data-content="Serás redirigido a los servidores de cada método de pago, ningún dato de la tarjeta se guarda en nuestros servidores, lo que hace los pagos 100% seguros."></span>
+                <img class="pull-right" src="img/tarjetas/mastercard.gif" alt=""></img>
+              </div>
+              <hr></hr>
+              <div class="checkbox clearfix">
+                <label class="spa-der-sm"><input type="checkbox"></input> Visa</label>
+                <span class="icon-info text-sm text-info" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" title="Visa" data-content="COSTO DEL GIRO"></span>
+                <img class="pull-right" src="img/tarjetas/visa.gif" alt=""></img>
+              </div>
+              <hr></hr>
+              <div class="checkbox clearfix row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <label class="spa-der-sm spa-top-sm"><input type="checkbox"></input> OCA</label>
+                  <span class="icon-info text-sm text-info" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" title="OCA" data-content="PODÉS PAGAR EN CUALQUIER SUCURSAL - COSTO DEL GIRO $40 - INFORMACIÓN IMPORTANTE: Tenés hasta 48 hs luego de realizar tu compra para pagar, con tu nro de cédula, a la empresa. Te reservamos los productos por 48 horas, si pasado ese plazo no hiciste efectivo el pago, perdés la reserva."></span>
+                </div>
+                <div class="form-group form-group-lg col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                  <label class="col-sm-6 col-xs-12 control-label spa-top-sm" for="cantidadCuotas">cantidad de pagos:</label>
+                  <div class="col-sm-4 col-xs-12">
+                    <select class="form-control" id="cantidadCuotas">
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">6</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-3">
+                  <img class="pull-right" src="img/tarjetas/oca.gif" alt=""></img>
+                </div>
+              </div>
+              <hr></hr>
+              <div class="checkbox clearfix">
+                <label class="spa-der-sm"><input type="checkbox"></input> PayPal</label>
+                <span class="icon-info text-sm text-info" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="right" title="PayPal" data-content="COSTO DEL GIRO"></span>
+                <img class="pull-right" src="img/tarjetas/paypal.gif" alt=""></img>
+              </div>
+              <hr></hr>
+              <div class="row clearfix spa-bot">
+                <label class="col-lg-12" for="cod_promocion">¿Tiene un código promocional?</label>
+                <div class="col-lg-9 col-md-9 col-sm-9">
+                  <div class="form-group cod-promocion-container">
+                    <input type="text" class="form-control input-lg" id="cod_promocion" placeholder="Ingresá tu Código"></input>
+                    <span class="valido active hidden icon-check-01"></span>
+                    <span class="error hidden icon-delete"></span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cod-promocion-container">
+                  <a href="" class="btn btn-success btn-block">VALIDAR</a>
+                </div>
+              </div>
+              <div class="alert alert-info" role="alert">Serás redirigido a los servidores de cada método de pago, ningún dato de la tarjeta se guarda en nuestros servidores, lo que hace los <strong>pagos 100% seguros.</strong></div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value=""></input>
+                  <span class="help-block no-margin">Al hacer clic en "Confirmar" aceptas los <a class="text-info" href="/">Términos y Condiciones</a> de Uso de alamano</span>
+                </label>
+              </div>
+            </div>
+            <div class="row spa-bot" id="btn-confirmar">
+              <div class="col-lg-12">
+                <span class="icon-flecha text-secondary"></span> <a href="\servicio_ampliado_2.html" class="text-secondary">Volver a Agenda</a>
+                <a href="\servicio_ampliado_3.html" class="btn btn-secondary btn-sm padding-lg pull-right">CONFIRMAR</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-12 col-lg-12">
+            <div class="bg-white well">
+              <h4 class="text-primary text-uppercase"><strong>Resumen</strong></h4>
+              <hr></hr>
+              <div class="media spa-top-xs media-fix">
+                <div class="media-left media-middle">
+                  <div class="media-object text-bold">Servicio:</div>
+                </div>
+                <div class="media-body">
+                  <div class="media-heading"><span class="icon-limpieza text-sm text-info spa-der-xs"></span>Limpieza</div>
+                </div>
+              </div>
+              <hr></hr>
+              <div class="relative">
+                <a href="/servicio_ampliado_1.html"><span class="icon-editar text-info text-sm position position-top-right"></span></a>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Cuartos:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">3</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Baños:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">1</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Extras:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Ventanas<br></br>Horno<br></br>Heladera</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Tiempo Estimado:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">3 Horas</div>
+                  </div>
+                </div>
+              </div>
+              <hr></hr>
+              <div class="relative">
+                <a href="/servicio_ampliado_2.html"><span class="icon-editar text-info text-sm position position-top-right"></span></a>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Dirección:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">Libertador 1641</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Apto.:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">202</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Fecha:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">18/03/2016</div>
+                  </div>
+                </div>
+                <div class="media spa-top-xs media-fix">
+                  <div class="media-left">
+                    <div class="media-object text-bold">Hora:</div>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">15:30</div>
+                  </div>
+                </div>
+              </div>
+              <hr></hr>
+              <div class="media spa-top-xs media-fix">
+                <div class="media-left">
+                  <div class="media-object text-bold">Precio:</div>
+                </div>
+                <div class="media-body">
+                  <div class="media-heading text-secondary pull-right spa-der-md">$ 500,00</div>
+                </div>
+              </div>
+              <div class="media spa-top-xs media-fix">
+                <div class="media-left">
+                  <div class="media-object text-bold">Cupón Promocional:</div>
+                </div>
+                <div class="media-body">
+                  <div class="media-heading pull-right spa-der-md">-$ 50,00</div>
+                </div>
+              </div>
+              <hr></hr>
+              <div class="media spa-top-xs media-fix">
+                <div class="media-left">
+                  <div class="media-object text-bold text-sm">Total:</div>
+                </div>
+                <div class="media-body">
+                  <div class="media-heading pull-right text-bold text-md text-secondary">$ 450,00</div>
+                </div>
+              </div>            
+            </div>
+            <div class="row">
+              <div class="col-lg-12 spa-bot-xs">
+                <h4 class="text-bold text-center text-sm">Preguntas Frecuentes</h4>
+                <hr class="hr-var-1"></hr>
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">What’s included in a cleaning service?</a>
+                <div class="collapse" id="collapseExample1">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">How does your pricing work?</a>
+                <div class="collapse" id="collapseExample2">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">Can I change or cancel my booking?</a>
+                <div class="collapse" id="collapseExample3">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">What is your cancellation and rescheduling policy?</a>
+                <div class="collapse" id="collapseExample4">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">Why am I not able to book the time and date I want?</a>
+                <div class="collapse" id="collapseExample5">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" href="#">I need more help.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </ui:define>
+
+</ui:composition>

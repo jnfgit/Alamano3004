@@ -65,23 +65,15 @@
     <!-- ********************* -->
     <!-- LLAMADOS DE FUNCIONES -->
     <!-- ********************* -->
-    <script type="text/javascript">
-	    $(function(){
-	        // TOOLTIPS
-	        $('[data-toggle="tooltip"]').tooltip();
-	
-	        // FIJAR MENU
-	        $(window).scroll(function () {
-	          $('#menu').toggleClass("solid", ($(window).scrollTop() > 100));
-	        });
-	      });
-    </script>
+	<script src="ownjs/tooltip.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ownjs/fijarMenu.js" type="text/javascript" charset="utf-8"></script>
+    
 </head>
 <h:body>	
 	<h:form>
-		<ui:include src="/headerAyuda.xhtml" />	
+		<ui:include src="/Headers/headerAyuda.xhtml" />	
 		<ui:insert name="content">Default content</ui:insert>
-  		<ui:include src="/footer.xhtml" />
+  		<ui:include src="/Footers/footer.xhtml" />
   	</h:form>
 </h:body>
 </html>

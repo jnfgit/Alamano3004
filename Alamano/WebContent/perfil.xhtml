@@ -1,0 +1,227 @@
+<ui:composition template="/MasterPages/masterPagePerfil.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:p="http://primefaces.org/ui">
+        
+    <ui:define name="title">
+        A la Mano - Mis Datos
+    </ui:define>
+    
+    <ui:define name="content">
+    <div class="spa-bot-md padding-lg" id="cuerpo">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12"><h2 class="text-primary"><strong><h:outputText value="#{msgs.perfil_perfilTitle}"></h:outputText></strong></h2></div>
+          <div class="col-lg-7 col-md-7 col-sm-12 col-lg-12">
+            <div class="bg-white well">
+              <h5 class="text-center spa-bot double-line"><strong><span><h:outputText value="#{msgs.perfil_datosPersTitle}"></h:outputText></span></strong></h5>
+			  <h:form>
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label for="nombre" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_nombreText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese un nombre" value="#{perfilBean.nombre}" type="text" class="form-control input-lg" id="nombre"></b:inputText>
+                    <h:message for="nombre" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+               		</div>
+                </div>
+                <div class="form-group">
+                  <label for="apellido" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_apellidoText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese un apellido" value="#{perfilBean.apellido}" type="text" class="form-control input-lg" id="apellido"></b:inputText>
+                    <h:message for="apellido" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="correo" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_correoText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese un Correo" value="#{perfilBean.correo}" type="email" class="form-control input-lg" id="correo"></b:inputText>
+                    <h:message for="correo" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="telefono" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_telefonoText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese un Teléfono" value="#{perfilBean.telefono}" type="text" class="form-control input-lg" id="telefono"></b:inputText>
+                    <h:message for="telefono" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="ci" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_ciText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                     <b:inputText required="true" requiredMessage="Ingrese CI" value="#{perfilBean.ci}" type="text" class="form-control input-lg" id="ci"></b:inputText>
+                    <h:message for="ci" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="sexo" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_sexoText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                   <div id="j_idt3:j_idt22:sexo" class="form-group">
+                    <h:selectOneMenu value="#{perfilBean.sexo}" name="sexo" id="sexo" class="form-control input-lg" >
+					   <f:selectItem itemValue="H" itemLabel="#{msgs.perfil_hombreOption}" />
+					   <f:selectItem itemValue="M" itemLabel="#{msgs.perfil_mujerOption}" />	   							
+					</h:selectOneMenu>	
+					</div>
+                  </div>
+                </div>
+                <div class="form-group spa-bot-lg">
+                  <label for="fechanac" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_fechaNacText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese Fecha de Nacimiento" value="#{perfilBean.fechanac}" type="text" class="form-control input-lg" id="fechanac"></b:inputText>
+                    <h:message for="fechanac" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                    
+                  </div>
+                </div>
+              </div>
+				</h:form>
+              <h5 class="text-center spa-bot double-line"><strong><span><h:outputText value="#{msgs.perfil_direccionTitle}"></h:outputText></span></strong></h5>
+
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label for="barrio" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_barrioText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese un barrio" value="#{perfilBean.barrio}" type="text" class="form-control input-lg" id="barrio"></b:inputText>
+                    <h:message for="barrio" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="calle" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_calleText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese una calle" value="#{perfilBean.calle}" type="text" class="form-control input-lg" id="calle"></b:inputText>
+                    <h:message for="calle" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="apto" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_aptoText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese Apto o Casa" value="#{perfilBean.apto}" type="text" class="form-control input-lg" id="apto"></b:inputText>
+                    <h:message for="apto" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="numero" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_numeroText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Ingrese número de puerta" value="#{perfilBean.numero}" type="text" class="form-control input-lg" id="numero"></b:inputText>
+                    <h:message for="numero" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+              </div>
+              <h5 class="text-center spa-bot double-line"><strong><span><h:outputText value="#{msgs.perfil_datosTitle}"></h:outputText></span></strong></h5>
+
+              <div class="form-horizontal">
+                <div class="form-group">
+                  <label for="password" class="col-sm-4 control-label text-semibold"><h:outputText value="#{msgs.perfil_contraText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                    <b:inputText required="true" requiredMessage="Contraseña" value="#{perfilBean.password}" type="password" class="form-control input-lg" id="password"></b:inputText>
+                 	<h:message for="password" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password2" class="col-sm-4 control-label text-semibold text-muted"><h:outputText value="#{msgs.perfil_ConfContraText}"></h:outputText></label>
+                  <div class="col-sm-8">
+                  <b:inputText required="true" requiredMessage="Confirmar contraseña" value="#{perfilBean.password2}" type="password" class="form-control input-lg" id="password2"></b:inputText>
+                  <h:message for="password2" styleClass="bg-danger" style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <a href="\servicio_ampliado_1.html" class="text-secondary"><h:outputText value="#{msgs.perfil_modContraText}"></h:outputText></a>
+              </div>
+
+            </div>
+            <div class="row spa-bot" id="btn-confirmar">
+              <div class="col-lg-12">
+                <a href="\servicio_ampliado_1.html" class=""><h:outputText value="#{msgs.perfil_darBajaText}"></h:outputText></a>
+		        <!-- 
+		        	<a href="\servicio_ampliado_3.html" class="btn btn-secondary btn-md padding-lg pull-right"><h:outputText value="#{msgs.perfil_confirmarText}"></h:outputText></a>
+              	 -->
+              	<h:commandButton action="#{perfilBean.confirmar}" class="btn btn-secondary btn-md padding-lg pull-right" value="#{msgs.perfil_confirmarText}"></h:commandButton>
+              	
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 spa-bot-xs">
+                <div class="list-group">
+                  <a href="#" class="list-group-item">Servicios</a>
+                  <a href="#" class="list-group-item">Mi cuenta</a>
+                  <a href="#" class="list-group-item">Ayuda</a>
+                  <a href="#" class="list-group-item">Términos y Condiciones</a>
+                  <a href="#" class="list-group-item">Cómo Funciona</a>
+                  <a href="#" class="list-group-item">Quienes Somos</a>
+                  <a href="#" class="list-group-item">Trabaja con Cosotros</a>
+                </div>
+                <div class="spa-bot-lg">
+                  <a href="#" class="padding-izq-lg">Servicios</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Mi cuenta</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Ayuda</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Términos y Condiciones</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Cómo Funciona</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Quienes Somos</a>
+                  <hr class="hr-var-1"></hr>
+                  <a href="#" class="padding-izq-lg">Trabaja con Cosotros</a>
+                </div>
+                <h4 class="text-bold text-center text-sm">Preguntas Frecuentes</h4>
+                <hr class="hr-var-1"></hr>
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">What’s included in a cleaning service?</a>
+                <div class="collapse" id="collapseExample1">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">How does your pricing work?</a>
+                <div class="collapse" id="collapseExample2">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">Can I change or cancel my booking?</a>
+                <div class="collapse" id="collapseExample3">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">What is your cancellation and rescheduling policy?</a>
+                <div class="collapse" id="collapseExample4">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" data-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">Why am I not able to book the time and date I want?</a>
+                <div class="collapse" id="collapseExample5">
+                  <div class="well bg-white spa-top-xs">
+                    From home cleaning to drywall repair to furniture assembly, Handy instantly matches thousands of customers every week with trusted professionals in cities all around the world. With a seamless 60-second booking process, secure payment, and a 100% money-back guarantee, Handy is the easiest, most convenient way to book home services.
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 spa-bot-xs">
+                <span class="icon-vinieta-02 text-xs-min text-black spa-der-sm valign-medio"></span><a class="text-bold text-black" role="button" href="#">I need more help.</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </ui:define>
+</ui:composition>

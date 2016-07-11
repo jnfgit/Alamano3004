@@ -10,6 +10,7 @@
 			<var>msgs</var>
 		</resource-bundle>
 	</application>
+
 	
 	<!-- MANAGED BEANS -->
 	<managed-bean>
@@ -20,7 +21,7 @@
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>
 		<managed-bean-class>com.beans.UsuarioBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
@@ -61,6 +62,18 @@
 		<navigation-case>
 			<from-outcome>error</from-outcome>
 			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- NAVIGATION RULE TO registro.xhtml -->
+	<navigation-rule>
+		<from-view-id>/registro.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/registro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ok</from-outcome>
+			<to-view-id>/registroOk.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

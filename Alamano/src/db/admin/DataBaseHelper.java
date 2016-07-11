@@ -43,4 +43,30 @@ public class DataBaseHelper {
 		}
 		return resultado;
 	}
+	public String query(String query){
+		ConnectionManagement conManagement = new ConnectionManagement();
+		String resultado = null;
+		Connection con = null;
+		try {
+			ResultSet rs = null;
+			
+			con = conManagement.getConnection();            
+            PreparedStatement p = con.prepareStatement(query);
+            rs = p.executeQuery();
+            
+            while(rs.next())
+            {
+                resultado = rs.getString(1);
+            }
+            
+            conManagement.freeConnection();
+		} catch (Exception e) {
+			try {
+				con.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return resultado;
+	}
 }

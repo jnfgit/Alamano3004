@@ -9,64 +9,167 @@
     xmlns:p="http://primefaces.org/ui">
         
     <ui:define name="title">
-        A la Mano - Registro
+        registro_msgAlaMano
     </ui:define>
     
     <ui:define name="content">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well">
-            <h4 class="text-black text-uppercase text-center spa-bot-lg"><strong>Crea tu usuario</strong></h4>
-            <form>
+            <h4 class="text-black text-uppercase text-center spa-bot-lg"><strong>#{msgs.registro_creaTuUsuario}</strong></h4>
+            <!-- <form> -->
               <div class="row spa-bot-lg">
                 <div class="col-lg-offset-2 col-lg-8">
                   <div class="row">
                     <div class="form-group form-group-lg col-lg-6">
-                      <label for="nombre" class="text-semibold">Nombre</label>
-                      <input type="text" class="form-control" id="nombre"></input>
+                    
+                      <label for="nombre" class="text-semibold"><h:outputText value="#{msgs.registro_nombreText}"></h:outputText></label>
+                      
+                      <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarNombre}" value="#{usuarioBean.nombre}" type="text" class="form-control" id="nombre" placeholder="#{msgs.registro_nombreText}" ></b:inputText>
+                      <h:message for="nombre"  style="font-size: 12px; color:#ff0000;"></h:message>
+                    
                     </div>
                     <div class="form-group form-group-lg col-lg-6">
-                      <label for="apellido" class="text-semibold">Apellido</label>
-                      <input type="text" class="form-control" id="apellido"></input>
+                     <label for="apellido" class="text-semibold"><h:outputText value="#{msgs.registro_apellidoText}"></h:outputText></label>
+                     
+                      <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarApellido}" value="#{usuarioBean.apellido}" type="text" class="form-control" id="apellido" placeholder="#{msgs.registro_apellidoText}"></b:inputText>
+                      <h:message for="apellido"  style="font-size: 12px; color:#ff0000;"></h:message> 
+                      
                     </div>
                   </div>
                   <div class="form-group form-group-lg">
-                    <label for="fechanac" class="text-semibold">Fecha de Nacimiento</label>
-                    <input type="text" class="form-control" id="fechanac"></input>
+                  <label for="fechanac" class="text-semibold"><h:outputText value="#{msgs.registro_fechaNacimietoText}"></h:outputText></label>
+                  
+                  <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarFechaNac}" value="#{usuarioBean.dateOfBirth}" type="date" class="form-control" id="fechanac" placeholder="#{msgs.registro_fechaNacimietoText}" >
+                  <f:convertDateTime pattern="yyyy-MM-dd"></f:convertDateTime>
+                  </b:inputText>
+                      <h:message for="fechanac"  style="font-size: 12px; color:#ff0000;"></h:message> 
+                  
                   </div>
                   <div class="form-group form-group-lg">
-                    <label for="telefono" class="text-semibold">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono"></input>
+                  <label for="telefono" class="text-semibold"><h:outputText value="#{msgs.registro_telefono}"></h:outputText></label>
+                  
+                  <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarNroTelefono}" value="#{usuarioBean.telefono}" maxlength = "9" converterMessage = "#{msgs.registro_telConverterMessage}"  validatorMessage="#{msgs.registro_telValidatorMessage}" type="text" class="form-control" id="telefono"  placeholder="#{msgs.registro_telefono}" >
+                  	<f:validateLength minimum="9" maximum="9" />
+                  </b:inputText>
+                      <h:message for="telefono"  style="font-size: 12px; color:#ff0000;"></h:message>
                   </div>
                   <div class="spa-bot clearfix">
-                    <p>Sexo</p>
+                    <!-- <p>Sexo</p> -->
+                    <p>#{msgs.registro_sexo}</p>
+                 
+					<h:selectOneRadio id="radioSexo" required="true" requiredMessage="Seleccione sexo" value="#{usuarioBean.sexo}" class="iconos-sexo" >
+                  <table>
+                  	<tr>
+                  		<td>
+		                  	<label class="radio-inline col-lg-3 col-xs-5">	
+		                  		<f:selectItem  itemValue="1" itemLabel= "#{msgs.registro_mujer}"  />
+		                  	</label>
+                  		</td>
+                  		<td>
+                  			<span class="hidden-xs icon-mujer text-md text-secondary valign-top"></span>
+                  		</td>
+                  		<td>
+		                  
+		                  	<label class="radio-inline col-lg-3 col-xs-5 col-lg-offset-6">
+		   						<f:selectItem itemValue="2" itemLabel= "#{msgs.registro_hombre}" /> 
+		   				  	</label>		    			
+						 
+                  		</td>
+                  		<td>
+   							<span class="hidden-xs icon-hombre text-md text-primary valign-top"></span>
+                  		</td>
+                  	</tr>
+                  </table>
+                   </h:selectOneRadio>	
+                   <h:message for="radioSexo"  style="font-size: 12px; color:#ff0000;"></h:message>
+                   
+                  
+                  <!-- 
+                  <h:selectOneRadio value="#{usuarioBean.sexo}" class="iconos-sexo" >
+                  <label class="radio-inline col-lg-3 col-xs-5">	
+                  	<f:selectItem  itemValue="1" itemLabel= "#{msgs.registro_mujer}"  />
+                  	<span class="hidden-xs icon-mujer text-md text-secondary valign-top"></span>
+                  </label>
+                  </h:selectOneRadio>
+                  <h:selectOneRadio value="#{usuarioBean.sexo}" class="iconos-sexo" >
+                  <label class="radio-inline col-lg-3 col-xs-5 col-lg-offset-6">
+   					<f:selectItem itemValue="2" itemLabel= "#{msgs.registro_hombre}" /> 
+   					<span class="hidden-xs icon-hombre text-md text-primary valign-top"></span>
+   				  </label>		    			
+				</h:selectOneRadio>	
+                   -->
+                   
+                   
+                     <!--
+                     Falta hacer este 
                     <label class="radio-inline col-lg-3 col-xs-5">
-                      <input type="radio" id="mujer" value="mujer" name="sexo" class="iconos-sexo"></input>MUJER <span class="hidden-xs icon-mujer text-md text-secondary valign-top"></span>
+                      <input type="radio" id="mujer" value="mujer" name="sexo" class="iconos-sexo"></input>#{msgs.registro_mujer}<span class="hidden-xs icon-mujer text-md text-secondary valign-top"></span>
                     </label>
+                    
                     <label class="radio-inline col-lg-3 col-xs-5 col-lg-offset-6">
-                      <input type="radio" id="hombre" value="hombre" name="sexo" class="iconos-sexo"></input>HOMBRE <span class="hidden-xs icon-hombre text-md text-primary valign-top"></span>
+                      <input type="radio" id="hombre" value="hombre" name="sexo" class="iconos-sexo"></input>#{msgs.registro_hombre}<span class="hidden-xs icon-hombre text-md text-primary valign-top"></span>
                     </label>
+                    -->
                   </div>
+                  
+                  <!-- Correo inicio -->
                   <div class="form-group form-group-lg">
-                    <label for="correo" class="text-semibold">Email</label>
-                    <input type="email" class="form-control" id="correo"></input>
+                     <label for="correo" class="text-semibold"><h:outputText value="#{msgs.registro_correo}"></h:outputText></label>
+                    
+                    <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarMail}" value="#{usuarioBean.email}" type="text" class="form-control" id="correo" placeholder="#{msgs.registro_correo}" >
+                    	<f:validator validatorId="emailValidator" />
+						<f:attribute name="email" value="email" />
+                    </b:inputText>
+                      <h:message for="correo"  style="font-size: 12px; color:#ff0000;"></h:message>
+                  </div>
+                  <!-- Correo fin -->
+                  
+                  <!-- Contraseña y confirmar contraseña inicio -->
+      
+                  <div class="form-group form-group-lg">
+                    <label for="pass" class="text-semibold"><h:outputText value="#{msgs.registro_pass}"></h:outputText></label>
+                    
+                   <b:inputSecret required="true" requiredMessage="#{msgs.registro_ingresarPass}" value="#{usuarioBean.password}" type="text" class="form-control" id="password" placeholder="#{msgs.registro_pass}" >
+                   		<f:validator validatorId="repeatPasswordValidator" />
+						<f:attribute name="confirmPassword" value="#{confirmPassword}" />                   
+                   </b:inputSecret>
+                      <h:message for="password"  style="font-size: 12px; color:#ff0000;"></h:message>
+
+                      
                   </div>
                   <div class="form-group form-group-lg spa-bot-lg">
-                    <label for="contrasenia" class="text-semibold">Contraseña</label>
-                    <input type="password" class="form-control" id="contrasenia"></input>
+                    <label for="confirmPass" class="text-semibold"><h:outputText value="#{msgs.registro_confirmPass}"></h:outputText></label>
+                    
+                   <b:inputSecret required="true" requiredMessage="#{msgs.registro_ingresarConfirmPass}"  type="text" class="form-control" id="confirmPass" placeholder="#{msgs.registro_confirmPass}" 
+                   		binding="#{confirmPassword}" />
+                   		
+                      <h:message for="confirmPass"  style="font-size: 12px; color:#ff0000;"></h:message>    
+ 						<p:messages id="messages"  severity="info, warn, fatal" showSummary="true" showDetail="false"  autoUpdate="true"  style="font-size: 12px; color:#ff0000;">
+					</p:messages>                   
                   </div>
+                  
+                <!-- Contraseña y confirmar contraseña fin -->
+                  
+                  
+                  	
+                                    
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" value=""></input>
-                      Acepto los <a href="/" class="text-bold">Términos y Condiciones</a> de uso de alamano
+                      <h:selectBooleanCheckbox id="aceptoTermAndCond" required="true" requiredMessage="Aceptar terminos" value="#{usuarioBean.termAndConditions}"></h:selectBooleanCheckbox>
+                      
+	                    #{msgs.registro_accepto} <a href="/" class="text-bold">#{msgs.registro_termsAndConditions}</a> #{msgs.registro_alamano}
+                    	 <h:message for="aceptoTermAndCond"  style="font-size: 12px; color:#ff0000;"></h:message>
+                    	 <p:messages id="mgsaceptoTermAndCond" for="aceptoTermAndCond"  severity="info, warn, fatal" showSummary="true" showDetail="false"  autoUpdate="true"  style="font-size: 12px; color:#ff0000;">   </p:messages> 
+ 					
                     </label>
                   </div>
-                  <button type="submit" class="btn btn-secondary btn-block">CREAR CUENTA</button>
+                  <h:commandButton action="#{usuarioBean.Confirmar}" class="btn btn-secondary btn-block text-uppercase" value="#{msgs.registro_crearCuenta}"></h:commandButton>
                 </div>
               </div>
-            </form>
-            <h5 class="text-center double-line spa-bot-md"><strong><span>¿Yá tenés cuenta en alamano.com.uy?</span></strong></h5>
-            <div class="text-center text-sm"><a href="/login.html">Ingresá Aquí</a></div>
+            <!-- </form> -->
+            <h5 class="text-center double-line spa-bot-md"><strong><span>#{msgs.rigistro_msgCuenta}</span></strong></h5>
+            <div class="text-center text-sm"><a href="/login.html">#{msgs.registro_msgIngresar}</a></div>
           </div>
         </div>
       </div>

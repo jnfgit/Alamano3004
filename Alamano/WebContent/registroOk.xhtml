@@ -1,0 +1,35 @@
+<ui:composition template="/MasterPages/masterPageRegistro.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:p="http://primefaces.org/ui">
+        
+    <ui:define name="title">
+        registroOk_msgAlaMano
+    </ui:define>
+    
+    <ui:define name="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well">
+            <h4 class="text-black text-uppercase text-center spa-bot-lg"><strong>#{msgs.registroOk_confirmarCuenta}</strong></h4>
+            <!-- <form> -->
+              <div class="row spa-bot-lg">
+                <div class="col-lg-offset-2 col-lg-8">
+                
+         		<div class="bs-example bs-example-type" data-example-id="simple-headings">
+            		<div class="alert alert-success" role="alert">#{msgs.registroOk_msgConfirmacion}.</div>
+            	</div>
+                  <h:commandButton action="inicio" class="btn btn-secondary btn-block text-uppercase" value="#{msgs.registroOk_confirmarCuenta}"></h:commandButton>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </ui:define>
+
+</ui:composition>

@@ -28,6 +28,11 @@
 		<managed-bean-class>com.beans.CleanBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>perfilBean</managed-bean-name>
+		<managed-bean-class>com.beans.PerfilBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
 	<navigation-rule>
@@ -75,6 +80,18 @@
 		<navigation-case>
 			<from-outcome>error</from-outcome>
 			<to-view-id>/registro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ok</from-outcome>
+			<to-view-id>/registroOk.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+		<!-- NAVIGATION RULE TO perfil.xhtml -->
+	<navigation-rule>
+		<from-view-id>/perfil.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/inicio.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>ok</from-outcome>

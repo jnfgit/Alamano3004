@@ -14,6 +14,7 @@ public class TermsAndCondValidator implements Validator {
 	public void validate(FacesContext context, UIComponent component,
 		Object value) throws ValidatorException {
 
+		
 	  Boolean termsAndCond =  ((Boolean)value).booleanValue();
 
 	  if (termsAndCond == null){

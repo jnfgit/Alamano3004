@@ -117,11 +117,11 @@
                   <div class="form-group form-group-lg">
                      <label for="correo" class="text-semibold"><h:outputText value="#{msgs.registro_correo}"></h:outputText></label>
                     
-                    <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarMail}" value="#{usuarioBean.email}" type="text" class="form-control" id="correo" placeholder="#{msgs.registro_correo}" >
+                    <b:inputText required="true" requiredMessage="#{msgs.registro_ingresarMail}" value="#{usuarioBean.email}" type="text" class="form-control" id="email" placeholder="#{msgs.registro_correo}" >
                     	<f:validator validatorId="emailValidator" />
 						<f:attribute name="email" value="email" />
                     </b:inputText>
-                      <h:message for="correo"  style="font-size: 12px; color:#ff0000;"></h:message>
+                      <h:message for="email"  style="font-size: 12px; color:#ff0000;"></h:message>
                   </div>
                   <!-- Correo fin -->
                   
@@ -156,19 +156,24 @@
                                     
                   <div class="checkbox">
                     <label>
-                      <h:selectBooleanCheckbox id="aceptoTermAndCond" required="true" requiredMessage="Aceptar terminos" value="#{usuarioBean.termAndConditions}"></h:selectBooleanCheckbox>
+                      <h:selectBooleanCheckbox id="aceptoTermAndCond" required="true" requiredMessage="Aceptar terminos" value="#{usuarioBean.termAndConditions}">
+                      	<f:validator validatorId = "termsAndConditionsValidator" />
+						<f:attribute name="aceptoTermAndCond" value="aceptoTermAndCond" />
+                      </h:selectBooleanCheckbox>
                       
 	                    #{msgs.registro_accepto} <a href="/" class="text-bold">#{msgs.registro_termsAndConditions}</a> #{msgs.registro_alamano}
-                    	 <h:message for="aceptoTermAndCond"  style="font-size: 12px; color:#ff0000;"></h:message>
-                    	 <p:messages id="mgsaceptoTermAndCond" for="aceptoTermAndCond"  severity="info, warn, fatal" showSummary="true" showDetail="false"  autoUpdate="true"  style="font-size: 12px; color:#ff0000;">   </p:messages> 
- 					
+                 					
                     </label>
                   </div>
-                  <h:commandButton action="#{usuarioBean.Confirmar}" class="btn btn-secondary btn-block text-uppercase" value="#{msgs.registro_crearCuenta}"></h:commandButton>
+                  	<h:message for="aceptoTermAndCond"  style="font-size: 12px; color:#ff0000;"></h:message>
+                    <p:messages id="mgsaceptoTermAndCond" for="aceptoTermAndCond"  severity="info, warn, fatal" showSummary="true" showDetail="false"  autoUpdate="true"  style="font-size: 12px; color:#ff0000;">   </p:messages> 
+                	<br/>
+                  <h:commandButton action="#{usuarioBean.Confirmar}" class="btn btn-secondary btn-block text-uppercase" value="#{msgs.registro_crearCuenta}">
+                  </h:commandButton> 
                 </div>
               </div>
             <!-- </form> -->
-            <h5 class="text-center double-line spa-bot-md"><strong><span>#{msgs.rigistro_msgCuenta}</span></strong></h5>
+            <h5  class="text-center double-line spa-bot-md"><strong><span>#{msgs.rigistro_msgCuenta}</span></strong></h5>
             <div class="text-center text-sm"><a href="/login.html">#{msgs.registro_msgIngresar}</a></div>
           </div>
         </div>

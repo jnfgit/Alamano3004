@@ -30,7 +30,7 @@ public class RepeatPasswordValidator implements Validator {
 
 	  if (!password.equals(confirmPassword)) {
 		uiInputConfirmPassword.setValid(false);
-		throw new ValidatorException(new FacesMessage(
+		throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR,"Password must match confirm password.",
 			"Password must match confirm password."));
 	  }
 

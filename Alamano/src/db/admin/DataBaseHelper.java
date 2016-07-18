@@ -54,9 +54,13 @@ public class DataBaseHelper {
             PreparedStatement p = con.prepareStatement(query);
             rs = p.executeQuery();
             
+            //if(rs.next())
+            	//return rs.getString("cant");
+                        
             while(rs.next())
             {
                 resultado = rs.getString(1);
+                break;
             }
             
             conManagement.freeConnection();

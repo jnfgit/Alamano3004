@@ -49,15 +49,9 @@ public class UsuarioBean {
 			u.setTelefono(Integer.parseInt(this.telefono.toString()));
 			u.setFechaNacimiento(this.dateOfBirth);
 			
-			//if(password.equals(confirmPassword)){
-				DataBaseHelper hel = new DataBaseHelper();
-				String pass = hel.getSHA1FromPassword(this.password);
-				u.setClavePass(pass);
-			//}
-			//else{
-				//error("Las contraseñas no coinciden", "Detalle, el error ocurre al intentar validar las contraseña.");
-				//return "error";
-			//}
+			DataBaseHelper hel = new DataBaseHelper();
+			String pass = hel.getSHA1FromPassword(this.password);
+			u.setClavePass(pass);
 			
 				
 			
@@ -69,11 +63,8 @@ public class UsuarioBean {
 			em.getTransaction().commit();
 			em.close();
 			emf.close();
-		}catch(ConstraintViolationException ex){
-			ex.printStackTrace();
-			 //error("Ya existe este mail.", "Detalle, el error ocurre porque se repite el mail.");
-			//return "error";
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 			error("Se ha producido un error intentelo más tarde.", "Detalle, se ha producido un error, intentelo mas tarde.");
 			return "error";

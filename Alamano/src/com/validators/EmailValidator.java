@@ -1,6 +1,7 @@
 package com.validators;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.application.FacesMessage.Severity;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
@@ -18,25 +19,17 @@ public class EmailValidator implements Validator{
 
 	  String email = value.toString();
 
-	  //UIInput uiInputemail = (UIInput) component.getAttributes()
-		//.get("email");
-	  //String email2 = uiInputemail.getSubmittedValue()
-		//.toString();
-
-	  // Let required="true" do its job.
-	  if (email == null || email.isEmpty() //|| confirmPassword == null
-		//|| confirmPassword.isEmpty()
-		) {
+	  if (email == null || email.isEmpty()){
 			return;
 	  }
 	  DataBaseHelper dbHelper = new DataBaseHelper();
-	  if (dbHelper.query("Select * from usuario u where u = email") != null) {
+	  //String result = dbHelper.query("Select count(*) as cant from usuario u where u.email ='" + email + "';");
+	  String result = dbHelper.query("Select * from usuario u where u.email ='" + email + "';");
+	  if (result != null) {
 		  //uiInputemail.setValid(false);
-		throw new ValidatorException(new FacesMessage(
+		throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "This email is already exist.",
 			"This email is already exist."));
 	  }
-	  
-	  //select u.email from Usuario u where u.email = this.email
 
 	}
 }

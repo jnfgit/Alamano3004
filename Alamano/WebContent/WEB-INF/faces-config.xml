@@ -33,6 +33,11 @@
 		<managed-bean-class>com.beans.PerfilBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>lanzamientoBean</managed-bean-name>
+		<managed-bean-class>com.beans.LanzamientoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	<!-- NAVIGATION RULE TO inicio.xhtml -->
 	<navigation-rule>

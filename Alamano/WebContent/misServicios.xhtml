@@ -1,0 +1,190 @@
+<ui:composition template="/MasterPages/masterPageMisServicios.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:define name="title">
+       Mis Servicios - A la Mano
+    </ui:define>
+    
+    <ui:define name="content">
+	<div class="spa-bot-xs spa-top-lg" id="cuerpo">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="javascript:buttons('1');" id="btnPendientes" class="spa-bot btn btn-primary btn-sm">PENDIENTES</a>
+            <a href="javascript:buttons('0');" id="btnAnteriores" class="spa-bot btn btn-primary btn-invert-primary btn-sm">ANTERIORES</a>
+            <div class="spa-bot btn btn-secondary btn-sm pull-right pull-right-sm">CONTRATAR NUEVO SERVICIO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spa-bot padding-bot-lg container-fluid" id="pasos">
+      <div class="container">
+		<div id="pendientes">
+	        <div class="row">
+	          <div class="col-lg-9 col-md-9 col-sm-9 spa-bot-xs">
+	            <div class="bg-white well clearfix">
+	                <div class="row">
+	                  <h2 class="text-primary col-lg-8 col-md-8 col-sm-8 spa-top-xs"><a href="/"><strong>Servicio de Limpieza</strong></a></h2>
+	                  <h5 class="text-center spa-bot spa-top-md col-lg-4 col-md-4 col-sm-4"><strong>Número de Orden: </strong><span>132145</span></h5>
+	                </div>
+	                <div class="row">
+	                  <div class="col-lg-5 col-md-5 col-sm-5">
+	                    <div class="row">
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Fecha:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">18/03/2016</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Hora:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">15.30</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Estado:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6 text-secondary text-bold">Aceptada</div>
+	                    </div>
+	                  </div>
+	                </div>
+	                <hr class="hr-var-1"></hr>
+	                <div class="row">
+	                  <div class="col-lg-4 col-md-4 col-sm-5">
+	                    <strong class="spa-der-sm">Precio: </strong><span class="text-secondary text-sm text-bold">$ 500,00</span>
+	                  </div>
+	                  <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-6">
+	                    <a href="/" class="spa-der-lg no-underline"><span class="icon-editar"></span> Modificar</a>
+	                    <a href="/" class="no-underline"><span class="icon-borrar"></span> Cancelar</a>
+	                  </div>
+	                </div>
+	            </div>
+	          </div>
+	          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs bg-resumen-content">
+	            <div class="bg-box bg-resumen text-center spa-bot-lg padding-bot-md">
+	              <span class="icon-limpieza"></span>
+	              <a href="/" class="btn btn-primary btn-xs text-bold text-uppercase">Ver detalles</a>
+	              <img src="img/servicios/armado.jpg" alt="Armado de muebles"></img>
+	            </div>
+	          </div>            
+	        </div>
+	        <div class="row">
+	          <div class="col-lg-9 col-md-9 col-sm-9 spa-bot">
+	            <div class="bg-white well clearfix">
+	                <div class="row">
+	                  <h2 class="text-primary col-lg-8 col-md-8 col-sm-8 spa-top-xs"><a href="/"><strong>Mudanza</strong></a></h2>
+	                  <h5 class="text-center spa-bot spa-top-md col-lg-4 col-md-4 col-sm-4"><strong>Número de Orden: </strong><span>132145</span></h5>
+	                </div>
+	                <div class="row">
+	                  <div class="col-lg-5 col-md-5 col-sm-5">
+	                    <div class="row">
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Fecha:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">18/03/2016</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Hora:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">15.30</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Estado:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6 text-secondary text-bold">Aceptada</div>
+	                    </div>
+	                  </div>
+	                </div>
+	                <hr class="hr-var-1"></hr>
+	                <div class="row">
+	                  <div class="col-lg-4 col-md-4 col-sm-5">
+	                    <strong class="spa-der-sm">Precio: </strong><span class="text-secondary text-sm text-bold">$ 500,00</span>
+	                  </div>
+	                  <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-6">
+	                    <a href="/" class="spa-der-lg no-underline"><span class="icon-editar"></span> Modificar</a>
+	                    <a href="/" class="no-underline"><span class="icon-borrar"></span> Cancelar</a>
+	                  </div>
+	                </div>
+	            </div>
+	          </div>
+	          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs bg-resumen-content">
+	            <div class="bg-box bg-resumen text-center spa-bot-lg padding-bot-md">
+	              <span class="icon-limpieza"></span>
+	              <a href="/" class="btn btn-primary btn-xs text-bold text-uppercase">Ver detalles</a>
+	              <img src="img/servicios/armado.jpg" alt="Armado de muebles"></img>
+	            </div>
+	          </div>            
+	        </div>
+	  	</div>
+      	<div id="anteriores" style="display:none;">
+	        <div class="row">
+	          <div class="col-lg-9 col-md-9 col-sm-9 spa-bot-xs">
+	            <div class="bg-white well clearfix">
+	                <div class="row">
+	                  <h2 class="text-primary col-lg-8 col-md-8 col-sm-8 spa-top-xs"><a href="/"><strong>2Servicio de Limpieza</strong></a></h2>
+	                  <h5 class="text-center spa-bot spa-top-md col-lg-4 col-md-4 col-sm-4"><strong>Número de Orden: </strong><span>132145</span></h5>
+	                </div>
+	                <div class="row">
+	                  <div class="col-lg-5 col-md-5 col-sm-5">
+	                    <div class="row">
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Fecha:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">18/03/2016</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Hora:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">15.30</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Estado:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6 text-secondary text-bold">Aceptada</div>
+	                    </div>
+	                  </div>
+	                </div>
+	                <hr class="hr-var-1"></hr>
+	                <div class="row">
+	                  <div class="col-lg-4 col-md-4 col-sm-5">
+	                    <strong class="spa-der-sm">Precio: </strong><span class="text-secondary text-sm text-bold">$ 500,00</span>
+	                  </div>
+	                  <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-6">
+	                    <a href="/" class="spa-der-lg no-underline"><span class="icon-editar"></span> Modificar</a>
+	                    <a href="/" class="no-underline"><span class="icon-borrar"></span> Cancelar</a>
+	                  </div>
+	                </div>
+	            </div>
+	          </div>
+	          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs bg-resumen-content">
+	            <div class="bg-box bg-resumen text-center spa-bot-lg padding-bot-md">
+	              <span class="icon-limpieza"></span>
+	              <a href="/" class="btn btn-primary btn-xs text-bold text-uppercase">Ver detalles</a>
+	              <img src="img/servicios/armado.jpg" alt="Armado de muebles"></img>
+	            </div>
+	          </div>            
+	        </div>
+	        <div class="row">
+	          <div class="col-lg-9 col-md-9 col-sm-9 spa-bot">
+	            <div class="bg-white well clearfix">
+	                <div class="row">
+	                  <h2 class="text-primary col-lg-8 col-md-8 col-sm-8 spa-top-xs"><a href="/"><strong>Mudanza</strong></a></h2>
+	                  <h5 class="text-center spa-bot spa-top-md col-lg-4 col-md-4 col-sm-4"><strong>Número de Orden: </strong><span>132145</span></h5>
+	                </div>
+	                <div class="row">
+	                  <div class="col-lg-5 col-md-5 col-sm-5">
+	                    <div class="row">
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Fecha:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">18/03/2016</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Hora:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6">15.30</div>
+	                      <div class="col-lg-4 col-md-4 col-sm-4"><strong>Estado:</strong></div>
+	                      <div class="col-lg-6 col-md-6 col-sm-6 text-secondary text-bold">Aceptada</div>
+	                    </div>
+	                  </div>
+	                </div>
+	                <hr class="hr-var-1"></hr>
+	                <div class="row">
+	                  <div class="col-lg-4 col-md-4 col-sm-5">
+	                    <strong class="spa-der-sm">Precio: </strong><span class="text-secondary text-sm text-bold">$ 500,00</span>
+	                  </div>
+	                  <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-6">
+	                    <a href="/" class="spa-der-lg no-underline"><span class="icon-editar"></span> Modificar</a>
+	                    <a href="/" class="no-underline"><span class="icon-borrar"></span> Cancelar</a>
+	                  </div>
+	                </div>
+	            </div>
+	          </div>
+	          <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs bg-resumen-content">
+	            <div class="bg-box bg-resumen text-center spa-bot-lg padding-bot-md">
+	              <span class="icon-limpieza"></span>
+	              <a href="/" class="btn btn-primary btn-xs text-bold text-uppercase">Ver detalles</a>
+	              <img src="img/servicios/armado.jpg" alt="Armado de muebles"></img>
+	            </div>
+	          </div>            
+	        </div>
+	  	</div>
+      </div>
+    </div>
+    </ui:define>
+
+</ui:composition>

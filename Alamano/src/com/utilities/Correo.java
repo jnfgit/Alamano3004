@@ -25,6 +25,7 @@ public class Correo {
 	public static void main(String args[])throws AddressException, MessagingException {
 
 		try {
+			Correo.enviarCorreoServicio("gdotta30@gmail.com");
 			//ejemplo envio de correo.
 			//Correo.enviarCorreoConfirmarUsuario("gdotta30@gmail.com");
 			
@@ -45,6 +46,23 @@ public class Correo {
 		//EnvioCorreo.enviarCorreoConfirmarUsuario(correo);
 	}
 	
+	public static void enviarCorreoServicio(String correo) throws AddressException, MessagingException {
+		
+		MimeMessage mailMessage = new MimeMessage(getMailSession);
+		mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(correo));
+	
+		mailMessage.setSubject(Parameters.getParameter("servicioSubject"));
+		
+		String nombre = "Germán Dotta"; 
+		
+		String emailBody = Parameters.getParameter("servicioBody");
+		emailBody = emailBody.replace("#nombre#",nombre);
+		
+
+		mailMessage.setContent(emailBody, "text/html");
+		Correo.enviarCorreo(mailMessage);
+		System.out.println("\n\n ===> Your Java Program has just sent an Email successfully. Check your email..");
+	}
 	/*public static void enviarCorreoPedidoRegistrado(Orden orden) throws AddressException, MessagingException {
 				
 		MimeMessage mailMessage = new MimeMessage(getMailSession);
